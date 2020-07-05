@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html{
+    font-size:8.5px;
+}
+
+ body { height: 100%; min-width:105em;}
+
+
+
+@media screen and(min-device-width:200px) and(max-device-width:480px){
+    html{
+        font-size:7.5px;
+    }
+    
+}
+
+
+@media screen and (min-device-width:481) and(max-device-width:1048px){
+    html{
+        font-size:9.5px;
+    }
+}
+
+
+@media screen and (min-device-width:1400px) {
+    html{
+        font-size:10.5px;
+    }
+}
+
