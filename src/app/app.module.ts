@@ -7,11 +7,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
-import {MatSliderModule} from '@angular/material/slider';
 import{FlexLayoutModule} from '@angular/flex-layout';
 import { MainComponent } from './main/main.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +21,12 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCheckboxModule,
     MatButtonModule,
-    MatSliderModule,
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule
     
   ],
   providers: [],
