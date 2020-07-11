@@ -1,7 +1,7 @@
-
 <mat-sidenav-container>
+<!--1.Sidenav for menu-->
 
-  <mat-sidenav #sidenav mode="push" [(opened)]="opened" style="background-color: black; ">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" style="background-color: black; ">
 
 
     <div  fxLayout="row" fxLayoutAlign=" start"  fxLayoutGap="0.5rem" style="margin-right:0.4rem;margin-top:0.2rem;margin-bottom: 0.8rem;">
@@ -56,37 +56,61 @@
 
   <mat-sidenav-content>
    
+<!--First line-->
+<div class="btn-div" style="height:6.25rem;" fxLayout="row" >
 
-<div class="btn-div" fxLayout="row" >
 
-
-  <div style="width:7%" (click)=sidenav.open() fxLayout="row" fxLayoutAlign="space-evenly" >
-   <button  class="menu btns" ><i class="fa fa-bars" style="font-size:2.9rem; padding:0.35rem 0.5rem" ></i></button>
+  <div style="width:11%" fxLayout="row" >
+   <button  class=" btns" (click)=sidenav.open()><span class="flaticon-menu icon menu" ></span></button>
   </div>
   
-   <div  class="topnav" style="width:68%" fxLayout="row" >
+
+   <div  class="topnav" style="width:64%" fxLayout="row" >
           <input type="text"   fxFlex="99 99 auto" name="search">
           <button  class="btns" type="submit" fxFlex="1 1 auto"><i class="fa fa-search"></i></button>
    </div>
-   <div style=" width:2%;"></div>
-   <div  style="width:23%"  fxLayout="row" fxLayoutAlign="space-evenly" >
-    <button   class="btns" style="font-weight:500;font-size: 2rem;padding:0.5rem 0.75rem">Login & Sign Up</button>
+
+
+
+   <div  style="width:25%;"  fxLayout="row" fxLayoutAlign="space-evenly" >
+
+    <button   class="btns" style="font-weight:500;font-size: 2rem;padding:0.5rem 0.75rem">Log in / Sign Up </button>
+
     <button  class="btns" >
-      <i class="fa fa-shopping-cart" style="margin:0 auto; padding:0.5rem 0.5rem;font-size:3rem;"></i> 
+      <span class="flaticon-butterfly-shape-top-view icon" ></span>
     </button>
+
+    <button  class="btns" >
+      <i class="fa fa-shopping-cart" style="margin:0 auto; padding:0.5rem 0.5rem;font-size:2.75rem;"></i> 
+    </button>
+
     </div>
   
   
   </div>
   
+  <!--Second line-->
+  
+  <div class="btn-div" style="height:4rem;" fxLayout="row" >
   
   
-  <div class="btn-div" style="height:3.6rem;" fxLayout="row">
-  
-  
-    <div style=" width:7%;"></div>
+    <div style=" width:11%;" fxLayout="row" fxLayoutAlign="space-evenly">
+      <div class="dropdown" >
+      <button  class="btns sec-btns" style="font-size:1.9rem;padding:0.45rem 0.25rem;" (blur)="closeLang()" (click)="langChange()" > Language <i class="fa fa-caret-down" style="font-size:1.45rem"></i> </button>
+      <div class="dropdown-content" [(style.display)]="lang">
+      <button  class="btns  mmenu" style="font-family:inherit;margin-top:1rem"  > Malayalam</button>
+      <button  class="btns mmenu" style="font-family:inherit"> Other</button>
+      <button  class="btns  mmenu" style="font-family:inherit"> English</button>
+      <button  class="btns mmenu" style="font-family:inherit"> Other</button>
+      <button  class="btns  mmenu" style="font-family:inherit"> English</button>
+      <button  class="btns mmenu" style="font-family:inherit"> Other</button>
+      <button  class="btns  mmenu" style="font-family:inherit"> English</button>
+      <button  class="btns  mmenu" style="font-family:inherit"> English</button>
+      </div>
+    </div>
+    </div>
     
-    <div style=" width:68%;" fxLayout="row" fxLayoutAlign="space-evenly">
+    <div style=" width:64%;" fxLayout="row" fxLayoutAlign="space-between">
     <button class="btns second-btns" >Best sellers</button>
     <button class="btns second-btns">Men</button>
     <button class="btns second-btns">Women</button>
@@ -96,10 +120,9 @@
     <button class="btns second-btns" >Sell</button>
     </div>
   
-    <div style=" width:2%;"></div>
   
-    <div style=" width:23%;"fxLayout="row" fxLayoutAlign="space-evenly">
-    <button class="btns sec-btns" >Location</button>
+    <div style=" width:25%;"fxLayout="row" fxLayoutAlign="space-evenly">
+    <button class="map " ><i class="flaticon-india icon map-i"></i>	Location</button>
     <button  class="btns sec-btns">About us</button>
     </div>
     
@@ -157,6 +180,7 @@
   
 
   <div style="width:100%;background-color:black;height:3rem;"></div>
+
 
   </mat-sidenav-content>
 </mat-sidenav-container>
