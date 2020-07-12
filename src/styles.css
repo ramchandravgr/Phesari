@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('font/flaticon.css');
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html{
+    font-size:8.5px;
+}
+
+ body { height: 100%; min-width:120em;}
+
+
+
+@media screen and(min-device-width:200px) and(max-device-width:480px){
+    html{
+        font-size:6.5px;
+    }
+    
+ body {  min-width:100em;}
+    
+}
+
+
+@media screen and (min-device-width:481) and(max-device-width:1048px){
+    html{
+        font-size:10px;
+    }
+}
+
+
+@media screen and (min-device-width:1400px) {
+    html{
+        font-size:9.5px;
+    }
+}
+
