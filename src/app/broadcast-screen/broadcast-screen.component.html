@@ -1,0 +1,122 @@
+<h1>Offers Available</h1>
+
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" name="dropdownBasic1" id="dropdownBasic1" ngbDropdownToggle>DressType</button>
+      <div ngbDropdownMenu [(ngModel)] = "typeSelected" aria-labelledby="dropdownBasic1">
+          <!-- <input class="form-control" id="myInput" name="myInput" type="text" placeholder="Search.." required [(ngModel)] = "searchtype"> -->
+          <select [(ngModel)]="typeSelected" (change)="SetTypeFilter($event)">
+            <option ngbDropdownItem *ngFor="let designerCateg of designerCategs"> {{designerCateg}} </option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" name="dropdownBasic1" id="dropdownBasic1" ngbDropdownToggle>DressColour</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <!-- <input class="form-control" id="myInput" name ="myInput" type="text" placeholder="Search.."  required [(ngModel)] = "searchcolour"> -->
+          <select [(ngModel)]="colourSelected" (change)="SetColourFilter($event)">
+            <option ngbDropdownItem *ngFor="let colour of colours"> {{colour}}  </option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" name="dropdownBasic1" id="dropdownBasic1" ngbDropdownToggle>DressMaterial</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <!-- <input class="form-control" name="myInput" id="myInput" type="text" placeholder="Search.."  required [(ngModel)] = "searchmaterial"> -->
+          <select [(ngModel)] = "materialSelected" (change)="SetMaterialFilter($event)">
+            <option ngbDropdownItem *ngFor="let materialType of materialTypes"> {{materialType}}   </option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" name="dropdownBasic1" id="dropdownBasic1" ngbDropdownToggle>Budget GreaterThan</button>
+      <div ngbDropdownMenu  aria-labelledby="dropdownBasic1">
+          <!-- <input class="form-control" name="myInput" id="myInput" type="text" placeholder="Search.."  required [(ngModel)] = "searchbugmin"> -->
+          <select [(ngModel)] = "bugMinSelected" (change)="SetBugMinFilter($event)">
+            <option ngbDropdownItem *ngFor="let budgetValue of budgetValues"> {{budgetValue}}   </option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" name="dropdownBasic1" id="dropdownBasic1" ngbDropdownToggle>Budget LessThan</button>
+      <div ngbDropdownMenu  aria-labelledby="dropdownBasic1">
+          <!-- <input class="form-control" name="myInput" id="myInput" type="text" placeholder="Search.." required [(ngModel)] = "searchbugmax" > -->
+          <select [(ngModel)] = "bugMaxSelected" (change)="SetBugMaxFilter($event)">
+            <option ngbDropdownItem *ngFor="let budgetValue of budgetValues"> {{budgetValue}}   </option>
+          </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let set of datasender">
+    <h1>
+      {{set.category}}
+     </h1>
+  <div class="models" *ngFor='let item of set.dataArray'>
+    <div class="model">
+      <item-preview [item] = 'item'></item-preview>
+    </div>
+  </div>
+</div>  
+   <!-- <div class="model">
+    <item-preview></item-preview>
+ </div>
+ <div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div>
+<div class="model">
+  <item-preview></item-preview>
+</div> 
+  </div>
+</div> -->
+<!-- <h1>{{filterData.Colour}}</h1> -->
+<!-- <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(".dropdownBasic1 button").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script> -->
+
+
+
+
