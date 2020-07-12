@@ -24,6 +24,7 @@ export class DataSender {
     constructor(categ : string,dataset : DesignerPreviewData[]){
         this.category = categ;
         this.dataArray = dataset; 
+        
     } 
 }
 
