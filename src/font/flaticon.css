@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 11/07/2020 18:48
+  	Creation date: 12/07/2020 08:42
   	*/
 
 @font-face {
@@ -34,3 +34,4 @@ margin-left: 20px;
 .flaticon-butterfly-shape-top-view:before { content: "\f101"; }
 .flaticon-menu:before { content: "\f102"; }
 .flaticon-down-arrow:before { content: "\f103"; }
+.flaticon-shop:before { content: "\f104"; }
