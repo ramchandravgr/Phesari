@@ -11,23 +11,23 @@ import { stringify } from 'querystring';
 import { DesignerPreviewData } from '../preview-data';
 import { FilterData } from '../filter-data';
 
-
 @Component({
-  selector: 'app-upload-customer',
-  templateUrl: './upload-customer.component.html',
-  styleUrls: ['./upload-customer.component.css']
+  selector: 'app-designer-upload',
+  templateUrl: './designer-upload.component.html',
+  styleUrls: ['./designer-upload.component.css']
 })
-export class UploadCustomerComponent implements OnInit {
+export class DesignerUploadComponent implements OnInit {
   Header = "Upload Required Model"
   fileSelected : File = null
   public imagePath;
   imgURLs: any[] = [];
   public message: string;
   Description : string = ''
-  Budget : number = 0
+  Cost : number = 0
   Colour : string = ''
   dressType : string = ''
-  Age : number = 0
+  Duration : number = 0
+  Material : string = ''
   
   items: Observable<any[]>;
   isHovering: boolean;
@@ -111,15 +111,7 @@ export class UploadCustomerComponent implements OnInit {
     //     }
     //   });
     // }
-    let Record = {};
-        Record['dresstype'] = this.dressType;
-        Record['colour'] = this.Colour;
-        Record['age'] = this.Age;
-        Record['budget']= this.Budget;
-        Record['description'] = this.Description;
-        let name : string = 'Document' + this.dressType + this.Budget;
-        console.log(this.Age + this.Colour + this.Budget + this.Description + this.dressType);
-        this.detailsUploader.AddDetails(Record,this.dressType,name);
+    
         // this.db.doc('CustomeruploadDetails/' + name).update( { somepath : this.Header})
           // .then(res => {
           // console.log(res);
@@ -154,7 +146,7 @@ export class UploadCustomerComponent implements OnInit {
     //}
     // while(this.downloadURL.length<this.files.length){}
     const file = this.files[0];
-    const filePath = `test/${Date.now()}_${file.name}`;
+    const filePath = `DesignerUploads/${Date.now()}_${file.name}`;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
     task
@@ -167,17 +159,29 @@ export class UploadCustomerComponent implements OnInit {
               this.fb = url;
             }
             console.log(this.fb);
+            this.detailsUploader.AddImageURL("Dresses",name,this.fb)            
           });
         })
         )
         .subscribe(url => {
           if (url) {
             console.log(url);
-          
             // this.db.doc('CustomeruploadDetails/' + name).update( { downloadURL: stringify(u), imagePath : filePath });
           }
         }); 
+        let Record = {};
+        Record['dresstype'] = this.dressType;
+        Record['colour'] = this.Colour;
+        Record['duration'] = this.Duration;
+        Record['cost']= this.Cost;
+        Record['description'] = this.Description;
+        Record['material'] = this.Material;
+        Record['imagePath'] = filePath;
+        // Record['imageURL'] = this.fb;
+
+        let name : string = 'Document' + this.dressType + this.Cost + this.Duration;//change this to non common
+        console.log(this.Cost + this.Colour + this.Material + this.Description + this.dressType);
+        this.detailsUploader.AddDetails(Record,"Dresses",name);
           // console.log(this.downloadURL);
   }
-
 }

@@ -16,12 +16,13 @@
 //    }
 // }
 import { DesignerPreviewData } from './preview-data';
+import { Observable } from 'rxjs';
 
 export class DataSender {
     category : string;
-    dataArray : DesignerPreviewData[];
+    dataArray : Observable<{}>[];
 
-    constructor(categ : string,dataset : DesignerPreviewData[]){
+    constructor(categ : string,dataset : Observable<{}>[]){
         this.category = categ;
         this.dataArray = dataset; 
         

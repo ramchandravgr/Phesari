@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark">Phesari</nav>
+<div class="container">
+<div class="row justify-content-center p-2"><h1>{{Header}}</h1></div>
+<div class="dropzone" 
+     dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="onDrop($event)"
+     [class.hovering]="isHovering">
+
+
+     <h3>Image Drop Zone</h3>
+     <p>Drag and Drop Images</p>
+</div>
+
+<!-- <span style="color:red;" *ngIf="message">{{message}}</span> -->
+<div *ngFor="let imgURL of imgURLs">
+    <img [src]="imgURL" alt="No Preview Available" height="50" width="50">
+</div>
+<input type="file" style="display: none;" accept="image/jpeg,image/png" (change) = "OnFileSelect($event)" #fileSelector>
+<div class="form-group"><button type="button" class="btn btn-primary" (click) ="fileSelector.click()">Choose an Image</button></div>
+
+<div class="form-group">
+    <label for="type">Category</label>
+<input type="text" class="form-control" placeholder="Enter dress type..." id="type" name="type" required [(ngModel)] = "dressType">
+</div>
+<div class="form-group">
+    <label for="Material">Material</label>
+<input type="text" class="form-control" placeholder="Enter Dress Material..." id="Material" name="Material" required [(ngModel)] = "Material">
+</div>
+<div class="form-group">
+    <label for="duration">Duration</label>
+<input type="number" class="form-control" placeholder="Enter General Duration(days)..." id="duration" name="duration" required [(ngModel)] = "Duration">
+</div>
+<div class="form-group"><label for="colour">Colour</label>
+    <input type="text" class="form-control" placeholder="Enter Colour..." id="colour" name="colour" required [(ngModel)] = "Colour"></div>
+<div class="form-group"><label for="cost">Cost</label>
+    <input type="number" class="form-control" placeholder="Enter Budget(around)..." id="cost" name="cost" required [(ngModel)] = "Cost"></div>
+<div class="form-group">
+    <label for="description">Additional Information</label>
+<input type="text" class="form-control" placeholder="Enter extra requirements..." id="description" name="description" required [(ngModel)] = "Description">
+</div>
+<div class="form-group">
+    <button type="button" class="btn btn-primary" (click) ="OnUpload()">Upload To Server</button>
+</div>
+
+</div>

@@ -57,54 +57,61 @@
     </div>
   </div>
 </div>
-<div *ngFor="let set of datasender">
+<!-- <div *ngFor="let set of datasender">
     <h1>
       {{set.category}}
      </h1>
   <div class="models" *ngFor='let item of set.dataArray'>
     <div class="model">
-      <item-preview [item] = 'item'></item-preview>
+      <div class="card-container mx-auto mt-5">
+        <div class="card card-front">
+          <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
+          <div class="card-body"> 
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+        <div class="card card-back">
+          <li> DressType   : {{item.dresstype}}</li>
+          <li> Colour      : {{item.colour}}</li>
+          <li> Cost        : {{item.cost}}</li>
+          <li> Material    : {{item.material}}</li>
+          <li> Duration    : {{item.duration}}</li>
+          <div class="card-body bg-warning">
+            <button type="button " class="btn btn-success" > More Details...</button>
+          </div>
+        </div>
+    </div>
     </div>
   </div>
-</div>  
-   <!-- <div class="model">
-    <item-preview></item-preview>
- </div>
- <div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div>
-<div class="model">
-  <item-preview></item-preview>
-</div> 
+</div>   -->
+<div *ngFor="let h of designerCategs">
+  <div>{{h}}</div>
+    <div *ngIf="Sarees | async as items">
+      <div  class="models">
+      <div *ngFor="let item of items" >
+        <div class="model">
+          <div class="card-container mx-auto mt-5">
+              <div class="card card-front">
+                <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
+                <div class="card-body"> 
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+              <div class="card card-back">
+                <li> DressType   : {{item.dresstype}}</li>
+                <li> Colour      : {{item.colour}}</li>
+                <li> Cost        : {{item.cost}}</li>
+                <li> Material    : {{item.material}}</li>
+                <li> Duration    : {{item.duration}}</li>
+                <div class="card-body bg-warning">
+                  <button type="button " class="btn btn-success" > More Details...</button>
+                </div>
+              </div>
+          </div>
   </div>
-</div> -->
+</div>
+</div>
+</div>
 <!-- <h1>{{filterData.Colour}}</h1> -->
 <!-- <script>
   $(document).ready(function(){

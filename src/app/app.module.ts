@@ -14,8 +14,21 @@ import { DropzoneDirective } from './dropzone.directive';
 import { ItemPreviewComponent } from './item-preview/item-preview.component';
 import { BroadcastScreenComponent } from './broadcast-screen/broadcast-screen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {CdkScrollableModule} from '@angular/cdk/scrolling';
+import {DesignsPreviewerComponent} from 'C:/Users/RoGABhi/phesaritestapp/src/app/designs-previewer/designs-previewer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { from } from 'rxjs';
+import { DesignerUploadComponent } from './designer-upload/designer-upload.component';
+import { DesignsDisplayComponent } from './designs-display/designs-display.component';
 // import { DesignerPreviewData } from 'src/app/preview-data';
 // import { FilterData } from 'src/app/filter-data';
+const material = [
+  CdkScrollableModule,
+  MatGridListModule,
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +36,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DropzoneDirective,
     ItemPreviewComponent,
     BroadcastScreenComponent,
+    DesignsPreviewerComponent,
+    DesignerUploadComponent,
+    DesignsDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +49,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFirestoreModule,
     AngularFireStorageModule,
     NgbModule,
+    CdkScrollableModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    ScrollingModule,
+    InfiniteScrollModule
     // DesignerPreviewData,
     // FilterData,
   ],

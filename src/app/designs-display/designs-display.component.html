@@ -1,0 +1,31 @@
+
+ <mat-grid-list cols="5" rowHeight="250px">
+    <div *ngIf="infinite | async as items">
+        <div  class="item-list"
+        infinite-scroll
+        [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollThrottle]="throttle"
+        (scrolled)="onScroll($event,(items[items.length - 1].cost))">
+       </div>
+        <mat-grid-tile *ngFor="let item of items">
+            <div class="card-container mx-auto mt-5">
+                <div class="card card-front">
+                  <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
+                  <div class="card-body"> 
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+                <div class="card card-back">
+                  <li> DressType   : {{item.dresstype}}</li>
+                  <li> Colour      : {{item.colour}}</li>
+                  <li> Cost        : {{item.cost}}</li>
+                  <li> Material    : {{item.material}}</li>
+                  <li> Duration    : {{item.duration}}</li>
+                  <div class="card-body bg-warning">
+                    <button type="button " class="btn btn-success" > More Details...</button>
+                  </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </div>
+ </mat-grid-list>

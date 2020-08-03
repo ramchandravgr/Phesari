@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DesignerPreviewData } from '../preview-data';
 import { FilterData } from '../filter-data';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
-import { Observable, from } from 'rxjs';
+import { map, tap, mergeMap, throttleTime, scan } from 'rxjs/operators';
+import { Observable, from, BehaviorSubject } from 'rxjs';
 import { analytics } from 'firebase';
 import { DataSender } from '../upload-details.model';
 
@@ -39,15 +39,54 @@ export class BroadcastScreenComponent implements OnInit {
   searchmaterial: any;
   searchbugmin: any;
   searchbugmax: any;
+  Sarees : Observable<any[]>;
+  offset = new BehaviorSubject(null);
   datasets : DocumentChangeAction<any>[];
+  theEnd: boolean = false;
   constructor(public firestore : AngularFirestore) {
     for (let index = 0; index < 10; index++) {
       this.budgetValues.push(index*1000);  
+      const batchMap = this.offset.pipe(
+        throttleTime(500),
+        mergeMap(n => this.GetData()),
+        scan((acc, batch) => {
+          return { ...acc, ...batch };
+        }, {})
+      );
+    
+      this.Sarees = batchMap.pipe(map(v => Object.values(v)));
+      console.log(this.Sarees)
+      console.log("i reached this!!!") 
     }
    }
 
   ngOnInit(): void {
-    this.GetData();
+  }
+  GetData() {
+    // this.debugVar = this.debugVar + 1;
+    // console.log(this.debugVar)
+    // console.log(offset);
+    return this.firestore
+      .collection('Dresses', ref =>
+        ref
+          .orderBy('cost')
+          .limitToLast(20)
+      )
+      .snapshotChanges()
+      .pipe(
+        tap(arr => (arr.length ? null : (this.theEnd = true,
+          console.log("reached end")))),
+        map(arr => {
+          return arr.reduce((acc, cur) => {
+            const id = cur.payload.doc.id;
+            const data = cur.payload.doc.data();
+            console.log(this.Sarees)
+            console.log(cur.payload.doc.data())
+            return { ...acc, [id]: data };
+          }, {});
+        })
+      );
+      console.log("i reached")
   }
   SetTypeFilter(event){
     this.filterdata.DressType = this.typeSelected;
@@ -72,30 +111,52 @@ export class BroadcastScreenComponent implements OnInit {
     this.filterdata.BudgetMax = this.bugMaxSelected
   }
 
-  GetData(){
-    for(let i = 0; i < this.designerCategs.length; i++){
-      let tempdataarray : DesignerPreviewData[] = [];
-       this.firestore.collection(this.designerCategs[i],ref => {
-      let query : firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
-      query = query.limitToLast(15).orderBy("budget","asc")
-      if (this.filterdata.DressType != "all") { query = query.where('dresstype', '==', this.filterdata.DressType) };
-      if (this.filterdata.Colour != "all") { query = query.where('colour', '==', this.filterdata.Colour) };
-      if (this.filterdata.Material != "all") { query = query.where('material', '==', this.filterdata.Colour) };
-      if (this.filterdata.BudgetMin != 0) { query = query.where('budget', '>=', this.filterdata.BudgetMin) };
-      if (this.filterdata.BudgetMax != 99999999) { query = query.where('budget', '<=', this.filterdata.BudgetMax) };
-      return query;
-    }).get().forEach(ref => { 
-       ref.forEach(doc => {
-        let tempdata : DesignerPreviewData;
+  // GetData(){
+  //   for(let i = 0; i < this.designerCategs.length; i++){
+  //     let tempdataarray : Observable<{}>[];
+  //     tempdataarray.push(this.firestore.collection("Dresses",ref => {
+  //     let query : firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
+  //     query = query.limitToLast(15).orderBy("budget","asc").where('dresstype', '==', this.designerCategs[i]);
+  //     // if (this.filterdata.DressType != "all") { query = query.where('dresstype', '==', this.filterdata.DressType) };
+      
+  //     if (this.filterdata.Colour != "all") { query = query.where('colour', '==', this.filterdata.Colour) };
+  //     if (this.filterdata.Material != "all") { query = query.where('material', '==', this.filterdata.Colour) };
+  //     if (this.filterdata.BudgetMin != 0) { query = query.where('budget', '>=', this.filterdata.BudgetMin) };
+  //     if (this.filterdata.BudgetMax != 99999999) { query = query.where('budget', '<=', this.filterdata.BudgetMax) };
+  //     return query;
+  //   }).snapshotChanges()
+  //   .pipe(
+  //     tap(arr => (arr.length ? null : (this.theEnd = true,
+  //       console.log("reached end")))),
+  //     map(arr => {
+  //       return arr.reduce((acc, cur) => {
+  //         const id = cur.payload.doc.id;
+  //         const data = cur.payload.doc.data()
+  //         console.log(id + data)
+  //         // tempdataarray.push({ ...acc, [id]: data });
+  //         return { ...acc, [id]: data };
+  //       }, {});
+  //     })
+  //   )
+  //     );
+    
+    
+    
+    
+    
+    
+    // .get().forEach(ref => { 
+    //    ref.forEach(doc => {
+    //     let tempdata : DesignerPreviewData;
         //for less calls to firestore : prefer this if it works!!!
         // tempdata = new DesignerPreviewData(doc.data().age,doc.data().budget,doc.data().colour,doc.data().dresstype,doc.data().material,doc.data().imagePath,doc.data().description)
         //this takes more calls to firestore : expensive process!!!
-        tempdata = new DesignerPreviewData(doc.get('age'),doc.get('budget'),doc.get('colour'),doc.get('dresstype'),doc.get('material'),doc.get('imagePath'),doc.get('description'))
-        tempdataarray.push(tempdata) 
-      })
-    }) 
-       let ds : DataSender = new DataSender(this.designerCategs[i],tempdataarray);
-       this.datasender.push(ds);
-   }
-  }
+        // tempdata = new DesignerPreviewData(doc.get('age'),doc.get('budget'),doc.get('colour'),doc.get('dresstype'),doc.get('material'),doc.get('imagePath'),doc.get('description'))
+        // tempdataarray.push(tempdata) 
+    //   })
+    // }) 
+  //      let ds : DataSender = new DataSender(this.designerCategs[i],tempdataarray);
+  //      this.datasender.push(ds);
+  // //  }
+  // }
 }

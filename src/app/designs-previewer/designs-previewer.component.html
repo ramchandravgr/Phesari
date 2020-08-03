@@ -1,0 +1,61 @@
+<ng-container *ngIf="infinite | async as items">
+
+
+    <!-- <cdk-virtual-scroll-viewport itemSize="250" (scrolledIndexChange)="nextBatch($event, (items[items.length - 1].cost))">
+        <mat-grid-list cols="5" rowHeight="250px">
+            <mat-grid-tile *cdkVirtualFor="let item of items; let i = index; trackBy: trackByIdx" class="animated lightSpeedIn">
+                <div class="card-container mx-auto mt-5">
+                    <div class="card card-front">
+                      <img class="card-img-top" [src]="item.imageURL" alt="Card image cap">
+                      <div class="card-body"> 
+                        <h5 class="card-title">Card title</h5>
+                      </div>
+                    </div>
+                    <div class="card card-back">
+                      <li> DressType   : {{item.dresstype}}</li>
+                      <li> Colour      : {{item.colour}}</li>
+                      <li> Cost        : {{item.cost}}</li>
+                      <li> Material    : {{item.material}}</li>
+                      <li> Duration    : {{item.duration}}</li>
+                      <div class="card-body bg-warning">
+                        <button type="button " class="btn btn-success" > More Details...</button>
+                      </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+         -->
+            <div *ngFor="let item of items">
+                <div class="card-container mx-auto mt-5">
+                    <div class="card card-front">
+                      <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
+                      <div class="card-body"> 
+                        <h5 class="card-title">Card title</h5>
+                      </div>
+                    </div>
+                    <div class="card card-back">
+                      <li> DressType   : {{item.dresstype}}</li>
+                      <li> Colour      : {{item.colour}}</li>
+                      <li> Cost        : {{item.cost}}</li>
+                      <li> Material    : {{item.material}}</li>
+                      <li> Duration    : {{item.duration}}</li>
+                      <div class="card-body bg-warning">
+                        <button type="button " class="btn btn-success" > More Details...</button>
+                      </div>
+                    </div>
+                </div>
+      
+      </div>
+      <!-- <li *cdkVirtualFor="let p of items; let i = index; trackBy: trackByIdx" class="animated lightSpeedIn">
+        <h2>{{ i }}. {{ p.emoji }} {{ p.name }}</h2>
+        <p> {{ p.bio }} </p>
+      </li> -->
+  
+  
+  
+      <!-- <iframe style="margin: 0 auto; display: flex" *ngIf="theEnd" src="https://giphy.com/embed/lD76yTC5zxZPG" width="480"
+        height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+<!--   
+    </cdk-virtual-scroll-viewport> -->
+  
+  </ng-container>
