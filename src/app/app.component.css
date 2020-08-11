@@ -11,7 +11,7 @@
       padding-bottom:0.5rem;
       color:white;
       text-align:center;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .menuu-head{
@@ -56,7 +56,7 @@
   
   
   mat-sidenav{
-  width:18%;
+  width:17.5%;
   }
   
 
@@ -104,26 +104,30 @@
  
 /*Second division part*/
 
+.firstr-firstc{
+width:11%;
+}
+
 .menu:before{
-  font-size: 3rem;
+  font-size: 2.85rem;
   margin:0;
 }
 
 
-
-.topnav{
-  width:68%;
+.firstr-midc{
+  width:64%;
   margin:1.5rem auto;
   padding:0 0;
 }
 
-.topnav input[type=text] {
+
+.firstr-midc input[type=text] {
   font-size: 2rem;
   border:none;
   outline:none;
 }
 
-.topnav button {
+.firstr-midc button {
   background-color:white;
   color:black;
   padding: 0.5rem 0.7rem;
@@ -131,14 +135,16 @@
   font-size: 2rem;
 }
  
-.topnav button:hover {
+.firstr-midc button:hover {
   color:gray;
 }
 
-
+.firstr-lastc{
+width: 25%;
+}
 
 .cart:before{
-  font-size: 4.25rem;
+  font-size: 4rem;
   margin:0;
 }
 
@@ -151,7 +157,16 @@ padding:0.25rem 0.25rem;
 .cart:hover{
 color:gray;
 }
+
+
+.firstr-lastc{
+width:25%;
+}
+
 /*Third division part*/
+.midc{
+  width:65%;
+}
 
 .dropdown {
   float: left;
@@ -171,7 +186,7 @@ color:gray;
 .mmenu{
 width:100%;
 padding:0.45rem 0.25rem;
-font-size:1.65rem;
+font-size:1.45rem;
 font-family:Cambria;
 }
 
@@ -194,7 +209,7 @@ font-family:Cambria;
   cursor: pointer;
   margin:auto;
   font-size:1.9rem;    
-  padding:0.15rem 0.9rem;
+  padding:0rem 0.9rem;
 }
 
 .map:hover .map-i,.map:hover{
@@ -202,10 +217,11 @@ font-family:Cambria;
 }
 
 .map-i{
-  padding:0rem 0.25rem;
+  padding:0rem 0.1rem;
 }
 .map-i:before{
-  font-size: 3.5rem;
+  font-size: 3.2rem;
+  font-weight:100;
   margin:0;
 }
 
@@ -244,3 +260,57 @@ font-family:Cambria;
   .footer-btns:hover{
   text-decoration: underline;
   }
+
+
+#hide{
+  display:none !important;
+}
+
+
+.btns,.menuu-buttons{
+  -webkit-tap-highlight-color: transparent;
+  }
+ 
+@media screen and (min-device-width:200px) and (max-device-width:480px){
+
+  
+mat-sidenav{
+    width:50%;
+}
+
+
+
+#hidee{
+  display:none !important;
+}
+
+#hide{
+  display:flex !important;
+}
+
+.menu:before{
+  font-size: 2rem;
+}
+
+.icon:before{
+  font-size: 2.5rem;
+}
+
+
+.cart:before{
+  font-size: 2.5rem;
+  font-weight:500;
+}
+
+.support:before{
+  font-size: 2.5rem;
+  font-weight:500;
+  margin:0;
+}
+
+.support{
+margin:0 auto;
+padding:0.25rem 0.25rem;
+ }
+
+}
