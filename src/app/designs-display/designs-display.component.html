@@ -1,6 +1,33 @@
-
+<ng-multiselect-dropdown
+  [placeholder]="'Select Dress Type'"
+  [settings]="dropdownSettings"
+  [data]="dresstypes"
+  [(ngModel)]="typeselected"
+  (onSelect)="SetTypeFilter($event)"
+  (onSelectAll)="onTypeSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+<ng-multiselect-dropdown
+  [placeholder]="'Select Dress Colour'"
+  [settings]="dropdownSettings"
+  [data]="colours"
+  [(ngModel)]="colourselected"
+  (onSelect)="SetColourFilter($event)"
+  (onSelectAll)="onColourSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+<ng-multiselect-dropdown
+  [placeholder]="'Select Material Type'"
+  [settings]="dropdownSettings"
+  [data]="materials"
+  [(ngModel)]="matselected"
+  (onSelect)="SetMaterialFilter($event)"
+  (onSelectAll)="onMatSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+<button type="button " class="btn btn-success" (click)="SetFilter($event)">Filter Designs</button>
  <mat-grid-list cols="5" rowHeight="250px">
-    <div *ngIf="infinite | async as items">
+    <div *ngIf="designs | async as items">
         <div  class="item-list"
         infinite-scroll
         [infiniteScrollDistance]="scrollDistance"
@@ -12,7 +39,7 @@
                 <div class="card card-front">
                   <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
                   <div class="card-body"> 
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Item</h5>
                   </div>
                 </div>
                 <div class="card card-back">
@@ -22,7 +49,9 @@
                   <li> Material    : {{item.material}}</li>
                   <li> Duration    : {{item.duration}}</li>
                   <div class="card-body bg-warning">
-                    <button type="button " class="btn btn-success" > More Details...</button>
+                    <button type="button " class="btn btn-success" >More Details</button>
+                    <button type="button " class="btn btn-success" (click) ="WishList(item.id)" >Add to WishList</button>
+                    <button type="button " class="btn btn-success" (click) = "Cart(item.id)" >Add to Cart</button>
                   </div>
                 </div>
             </div>

@@ -29,6 +29,9 @@ export class DetailsUploaderService {
   });
   
   }
+  UpdateDetails(){
+    
+  }
   // deletePolicy(details : UploadDetails){
   //   this.firestore.doc('CustomeruploadDetails/' + details.CustomerID).delete();
   // }

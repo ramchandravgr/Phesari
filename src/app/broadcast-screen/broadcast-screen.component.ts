@@ -6,6 +6,7 @@ import { map, tap, mergeMap, throttleTime, scan } from 'rxjs/operators';
 import { Observable, from, BehaviorSubject } from 'rxjs';
 import { analytics } from 'firebase';
 import { DataSender } from '../upload-details.model';
+import { FirestoreCRUDService } from '../firestore-crud.service';
 
 @Component({
   selector: 'app-broadcast-screen',
@@ -43,71 +44,83 @@ export class BroadcastScreenComponent implements OnInit {
   offset = new BehaviorSubject(null);
   datasets : DocumentChangeAction<any>[];
   theEnd: boolean = false;
-  constructor(public firestore : AngularFirestore) {
-    for (let index = 0; index < 10; index++) {
-      this.budgetValues.push(index*1000);  
-      const batchMap = this.offset.pipe(
-        throttleTime(500),
-        mergeMap(n => this.GetData()),
-        scan((acc, batch) => {
-          return { ...acc, ...batch };
-        }, {})
-      );
-    
-      this.Sarees = batchMap.pipe(map(v => Object.values(v)));
-      console.log(this.Sarees)
-      console.log("i reached this!!!") 
-    }
-   }
+  items : any;
+  previewdata$ : Observable<DesignerPreviewData[]>;
+  ngOnInit(){
+    // this.firestoreService.get_details('Designers').subscribe(data => {
 
-  ngOnInit(): void {
+    //   this.items = data.map(e => {
+    //     return {
+    //       id: e.payload.doc.id,
+    //       // age: e.payload.doc.data()['age'],
+    //       cost: e.payload.doc.data()['cost'],
+    //       material: e.payload.doc.data()['material'],
+    //       colour: e.payload.doc.data()['colour'],
+    //       imageURL: e.payload.doc.data()['imageURL'],
+    //     };
+    //   })
+    //   console.log(this.items);
+
+    // });
   }
-  GetData() {
-    // this.debugVar = this.debugVar + 1;
-    // console.log(this.debugVar)
-    // console.log(offset);
-    return this.firestore
-      .collection('Dresses', ref =>
-        ref
-          .orderBy('cost')
-          .limitToLast(20)
-      )
-      .snapshotChanges()
-      .pipe(
-        tap(arr => (arr.length ? null : (this.theEnd = true,
-          console.log("reached end")))),
-        map(arr => {
-          return arr.reduce((acc, cur) => {
-            const id = cur.payload.doc.id;
-            const data = cur.payload.doc.data();
-            console.log(this.Sarees)
-            console.log(cur.payload.doc.data())
-            return { ...acc, [id]: data };
-          }, {});
-        })
-      );
-      console.log("i reached")
-  }
+  
+  constructor(public firestore : AngularFirestore,public firestoreService : FirestoreCRUDService) {
+    // for (let index = 0; index < 10; index++) {
+    //   this.budgetValues.push(index*1000);  
+    //   const batchMap = this.offset.pipe(
+    //     throttleTime(500),
+    //     mergeMap(n => this.GetData()),
+    //     scan((acc, batch) => {
+    //       return { ...acc, ...batch };
+    //     }, {})
+    //   );
+    
+    //   this.Sarees = batchMap.pipe(map(v => Object.values(v)));
+    //   console.log(this.Sarees)
+    //   console.log("i reached this!!!") 
+    // }
+   }
+  // GetData() {
+  //   // this.debugVar = this.debugVar + 1;
+  //   // console.log(this.debugVar)
+  //   // console.log(offset);
+  //   return this.firestore
+  //     .collection('Dresses', ref =>
+  //       ref
+  //         .orderBy('cost')
+  //         .limitToLast(20)
+  //     )
+  //     .snapshotChanges()
+  //     .pipe(
+  //       tap(arr => (arr.length ? null : (this.theEnd = true,
+  //         console.log("reached end")))),
+  //       map(arr => {
+  //         return arr.reduce((acc, cur) => {
+  //           const id = cur.payload.doc.id;
+  //           const data = cur.payload.doc.data();
+  //           console.log(this.Sarees)
+  //           console.log(cur.payload.doc.data())
+  //           return { ...acc, [id]: data };
+  //         }, {});
+  //       })
+  //     );
+  //     console.log("i reached")
+  // }
   SetTypeFilter(event){
     this.filterdata.DressType = this.typeSelected;
-    this.GetData();
     console.log(this.filterdata.DressType);
     console.log(event);
   }
   SetColourFilter(event){
-    this.GetData();
     this.filterdata.Colour = this.colourSelected
   }
   SetMaterialFilter(event){
-    this.GetData();
     this.filterdata.Material = this.materialSelected
   }
   SetBugMinFilter(event){
-    this.GetData();
     this.filterdata.BudgetMin = this.bugMinSelected
   }
   SetBugMaxFilter(event){
-    this.GetData();
     this.filterdata.BudgetMax = this.bugMaxSelected
   }
 

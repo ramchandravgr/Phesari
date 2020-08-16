@@ -84,7 +84,7 @@
     </div>
   </div>
 </div>   -->
-<div *ngFor="let h of designerCategs">
+<!-- <div *ngFor="let h of designerCategs">
   <div>{{h}}</div>
     <div *ngIf="Sarees | async as items">
       <div  class="models">
@@ -111,7 +111,7 @@
   </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- <h1>{{filterData.Colour}}</h1> -->
 <!-- <script>
   $(document).ready(function(){
@@ -124,6 +124,10 @@
   });
   </script> -->
 
-
+<div *ngFor ="let item of items">
+    <h1>{{item.age}}</h1>
+    <h2>{{item.material}}</h2>
+    <h3>{{item.id}}</h3>
+</div>
 
 

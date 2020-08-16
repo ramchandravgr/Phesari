@@ -1,61 +1,75 @@
-<ng-container *ngIf="infinite | async as items">
-
-
-    <!-- <cdk-virtual-scroll-viewport itemSize="250" (scrolledIndexChange)="nextBatch($event, (items[items.length - 1].cost))">
-        <mat-grid-list cols="5" rowHeight="250px">
-            <mat-grid-tile *cdkVirtualFor="let item of items; let i = index; trackBy: trackByIdx" class="animated lightSpeedIn">
-                <div class="card-container mx-auto mt-5">
-                    <div class="card card-front">
-                      <img class="card-img-top" [src]="item.imageURL" alt="Card image cap">
-                      <div class="card-body"> 
-                        <h5 class="card-title">Card title</h5>
-                      </div>
-                    </div>
-                    <div class="card card-back">
+<div *ngIf="designs | async as items">
+  <div class="item-list"
+        infinite-scroll
+        [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollThrottle]="throttle"
+        (scrolled)="onScroll($event,(items[items.length - 1].cost))">
+  </div>
+  <div class="myUploads" *ngFor='let item of items'>
+                <div class="upload">
+                  <div *ngIf="!item.edit else upload">
+                    <div class="left">
                       <li> DressType   : {{item.dresstype}}</li>
-                      <li> Colour      : {{item.colour}}</li>
-                      <li> Cost        : {{item.cost}}</li>
                       <li> Material    : {{item.material}}</li>
                       <li> Duration    : {{item.duration}}</li>
-                      <div class="card-body bg-warning">
-                        <button type="button " class="btn btn-success" > More Details...</button>
+                    </div>
+                    <div class="center">
+                      <li> Colour      : {{item.colour}}</li>
+                      <li> Cost        : {{item.cost}}</li>
+                      <li> Description : {{item.description}}</li>
+                    </div>
+                    <div class="right">
+                      <img class="card-img-top" [src]="item.imgURL" alt="Card image cap" style="width:10%">
+                    </div>
+                    <div class="rightmost">
+                      <div class="update btn">
+                        <button type="button" class="btn btn-success" (click) ="OnUpdate(item)">Update</button>
+                      </div>
+                      <div class="delete btn">
+                        <button type="button" class="btn btn-success" (click) ="OnDelete(item.id)">Delete</button>
                       </div>
                     </div>
-                </div>
-            </mat-grid-tile>
-          </mat-grid-list>
-         -->
-            <div *ngFor="let item of items">
-                <div class="card-container mx-auto mt-5">
-                    <div class="card card-front">
+                  </div> 
+                  <ng-template #upload>
+                    <div class="left">
+                      <div class="form-group">
+                        <label for="type">Dress Category</label>
+                    <input type="text" class="form-control" placeholder="Enter DressType" id="type" name="type" required [(ngModel)] = "item.editdressType">
+                    </div>
+                    <div class="form-group">
+                        <label for="Material">Dress Material</label>
+                    <input type="text" class="form-control" placeholder="Enter DressMaterial" id="Material" name="Material" required [(ngModel)] = "item.editmaterial">
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Delivery Time</label>
+                    <input type="number" class="form-control" placeholder="Enter ExpectedTime" id="duration" name="duration" required [(ngModel)] = "item.editduration">
+                    </div>
+                    </div>
+                    <div class="center">
+                      <div class="form-group"><label for="colour">Dress Colour</label>
+                        <input type="text" class="form-control" placeholder="Enter DressColour" id="colour" name="colour" required [(ngModel)] = "item.editcolour"></div>
+                    <div class="form-group"><label for="cost">Estimated Cost</label>
+                        <input type="number" class="form-control" placeholder="Enter Cost" id="cost" name="cost" required [(ngModel)] = "item.editcost"></div>
+                    <div class="form-group">
+                        <label for="description">Additional Information</label>
+                    <input type="text" class="form-control" placeholder="Enter Extra Information" id="description" name="description" required [(ngModel)] = "item.editdesc">
+                    </div>
+                    </div>
+                    <div class="right">
                       <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
-                      <div class="card-body"> 
-                        <h5 class="card-title">Card title</h5>
+                    </div>
+                    <div class="rightmost">
+                      <div class="upload btn">
+                        <button type="button" class="btn btn-success" (click) ="OnUpload(item)">Upload</button>
+                      </div>
+                      <div class="cancel btn">
+                        <button type="button" class="btn btn-success" (click) ="OnCancel(item)">Cancel</button>
                       </div>
                     </div>
-                    <div class="card card-back">
-                      <li> DressType   : {{item.dresstype}}</li>
-                      <li> Colour      : {{item.colour}}</li>
-                      <li> Cost        : {{item.cost}}</li>
-                      <li> Material    : {{item.material}}</li>
-                      <li> Duration    : {{item.duration}}</li>
-                      <div class="card-body bg-warning">
-                        <button type="button " class="btn btn-success" > More Details...</button>
-                      </div>
-                    </div>
-                </div>
-      
-      </div>
-      <!-- <li *cdkVirtualFor="let p of items; let i = index; trackBy: trackByIdx" class="animated lightSpeedIn">
-        <h2>{{ i }}. {{ p.emoji }} {{ p.name }}</h2>
-        <p> {{ p.bio }} </p>
-      </li> -->
-  
-  
-  
-      <!-- <iframe style="margin: 0 auto; display: flex" *ngIf="theEnd" src="https://giphy.com/embed/lD76yTC5zxZPG" width="480"
-        height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-<!--   
-    </cdk-virtual-scroll-viewport> -->
-  
-  </ng-container>
+                  </ng-template>
+                </div>  
+             </div>    
+</div>
+
+
+

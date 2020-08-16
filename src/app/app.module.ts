@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UploadCustomerComponent } from './upload-customer/upload-customer.component';
 import { DetailsUploaderService } from 'src/app/details-uploader.service';
+import {FirestoreCRUDService} from 'src/app/firestore-crud.service'
 import { environment } from 'src/environments/environment';
 import { DropzoneDirective } from './dropzone.directive';
 import { ItemPreviewComponent } from './item-preview/item-preview.component';
@@ -23,6 +24,11 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { from } from 'rxjs';
 import { DesignerUploadComponent } from './designer-upload/designer-upload.component';
 import { DesignsDisplayComponent } from './designs-display/designs-display.component';
+import { WishListPageComponent } from './wish-list-page/wish-list-page.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+// import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+// import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 // import { DesignerPreviewData } from 'src/app/preview-data';
 // import { FilterData } from 'src/app/filter-data';
 const material = [
@@ -39,9 +45,11 @@ const material = [
     DesignsPreviewerComponent,
     DesignerUploadComponent,
     DesignsDisplayComponent,
+    WishListPageComponent
   ],
   imports: [
     BrowserModule,
+    NgSelectModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -53,11 +61,12 @@ const material = [
     MatGridListModule,
     BrowserAnimationsModule,
     ScrollingModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgMultiSelectDropDownModule.forRoot(),
     // DesignerPreviewData,
     // FilterData,
   ],
-  providers: [DetailsUploaderService],
+  providers: [DetailsUploaderService,FirestoreCRUDService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
