@@ -1,0 +1,252 @@
+<mat-sidenav-container>
+<!--1.Sidenav for menu-->
+
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" style="background-color: black; ">
+
+
+    <div  fxLayout="row" fxLayoutAlign=" start"  fxLayoutGap="0.5rem" style="margin-right:0.4rem;margin-top:0.2rem;margin-bottom: 0.8rem;">
+      <div fxFlex="1 1 auto" >
+       <h2 class="menuu">Menu</h2>
+      </div>
+    </div>
+    
+
+
+
+    <p style="margin-bottom:1.25rem;margin-top:1rem;padding-left:0.8rem;font-size:1.75rem; color:white;font-family:inherit;">Shop By Category</p>
+
+
+    
+
+    <p class="menuu-head">Men</p>
+    <div style="margin-bottom:1rem;" fxLayout="column" fxLayoutGap="0.5rem" fxAlignLayout="space-evenly stretch">
+    <a  href="#" class="menuu-buttons">Pants</a>
+    <a  href="#" class="menuu-buttons">Shirts</a>
+    <a  href="#" class="menuu-buttons">Sweaters</a>
+    <a  href="#" class="menuu-buttons">T-shirts</a>
+    <a  href="#" class="menuu-buttons">Suits</a>
+    </div>
+
+
+
+
+    <p class="menuu-head">Women</p>
+    <div  style="margin-bottom:1rem;" fxLayout="column"  fxLayoutGap="0.5rem" fxAlignLayout="space-evenly stretch">
+    <a  href="#" class="menuu-buttons">Trousers</a>
+    <a  href="#" class="menuu-buttons">Shirts</a>
+    <a  href="#" class="menuu-buttons">Sweaters</a>
+    <a  href="#" class="menuu-buttons">T-shirts</a>
+    <a  href="#" class="menuu-buttons">Sarees</a>
+    </div>
+
+
+
+
+    <p class="menuu-head">Kids</p>
+    <div  style="margin-bottom:1rem;" fxLayout="column"  fxLayoutGap="0.5rem" fxAlignLayout="space-evenly stretch">
+    <a  href="#" class="menuu-buttons">Night wear</a>
+    <a  href="#" class="menuu-buttons">Shirts</a>
+    <a  href="#" class="menuu-buttons">Sweaters</a>
+    <a  href="#" class="menuu-buttons">T-shirts</a>
+    <a  href="#" class="menuu-buttons">Traditional wear</a>
+    </div>
+
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+   
+<!--First line-->
+<div class="btn-div" id="hidee" style="height:6rem;" fxLayout="row" fxLayoutAlign="evenly-spaced">
+
+
+  <div class="firstr-firstc" fxLayout="row" >
+   <button  class=" btns" (click)=sidenav.open()><span class="flaticon-menu icon menu" ></span></button>
+  </div>
+  
+
+   <div  class="firstr-midc"  fxLayout="row" >
+          <input type="text"   fxFlex="99 99 auto" name="search">
+          <button  class="btns" type="submit" fxFlex="1 1 auto"><i class="fa fa-search"></i></button>
+   </div>
+
+
+   <div  class="firstr-lastc" fxLayout="row" fxLayoutAlign="space-around" >
+
+    <button   class="btns" style="font-weight:500;font-size: 2rem;padding:0.5rem 0.75rem">Log in / Sign Up </button>
+
+    <button  class="btns" >
+      <span class="flaticon-butterfly-shape-top-view icon" ></span>
+    </button>
+
+    <button  class="btns" >
+      <span class="flaticon-shop cart"></span> 
+    </button>
+
+    </div>
+
+  
+  
+  </div>
+  
+
+<!--First line in mobile-->
+
+<div class="btn-div" id="hide" style="height:5rem;color:white;font-size: 4.5rem;font-weight: 500;justify-content: center;">Phesari</div>
+<div class="btn-div" id="hide" style="height:6rem;" fxLayout="row" fxLayoutAlign="space-between">
+
+ 
+    <button  class=" btns" (click)=sidenav.open()><span class="flaticon-menu icon menu" ></span></button>
+ 
+    <button  class="btns" type="submit" ><i class="fa fa-search" style="font-size:2rem;padding: 0.25rem 0rem;"></i></button>
+  
+     <button  class="btns" >
+       <span class="flaticon-butterfly-shape-top-view icon" ></span>
+     </button>
+ 
+     <button  class="btns" >
+       <span class="flaticon-shop cart"></span> 
+     </button>
+ 
+</div>
+
+  <!--Second line-->
+  
+  <div class="btn-div" id="hidee" style="height:3.75rem;" fxLayout="row" fxLayoutAlign="evenly-spaced">
+  
+  
+    <div class="firstr-firstc" fxLayout="row" fxLayoutAlign="space-evenly">
+      <div class="dropdown" >
+      <button  class="btns sec-btns" style="font-size:1.8rem;padding:0.45rem 1rem;" (blur)="closeLang()" (click)="langChange()" > Language <i class="fa fa-caret-down" style="font-size:1.45rem"></i> </button>
+      <div class="dropdown-content" [(style.display)]="lang">
+      <button  class="btns  mmenu" style="font-family:inherit;margin-top:1rem"  > Malayalam</button>
+      <button  class="btns mmenu" style="font-family:inherit"> Other</button>
+      </div>
+    </div>
+    </div>
+    
+    <div class="midc" fxLayout="row"  fxLayoutAlign="space-between">
+    <button class="btns second-btns" id="hidee">Best sellers</button>
+    <button class="btns second-btns" id="hidee">Men</button>
+    <button class="btns second-btns" id="hidee">Women</button>
+    <button class="btns second-btns" id="hidee">Kids</button>
+    <button class="btns second-btns">Customize</button>
+    <button class="btns second-btns">Customer Service</button>
+    <button class="btns second-btns" >Sell</button>
+    </div>
+  
+  
+    <div class="firstr-lastc " fxLayout="row" fxLayoutAlign="space-evenly">
+    <button class="map" fxLayout="row"><i class="flaticon-india icon map-i"></i><p style="margin:auto">Location</p>	</button>
+    <button  class="btns sec-btns">About us</button>
+    </div>
+    
+  
+  </div>
+
+  <!--Second line in mobile-->
+  
+  <div class="btn-div" id="hide" style="height:5rem;" fxLayout="row" fxLayoutAlign="evenly-spaced">
+  
+    
+  
+  
+  </div>
+
+
+
+<!--Content divisions-->
+
+<app-post-order></app-post-order>
+  
+
+ <!--Bottom divisions-->
+<div style="background-color: black;width:100%;" id="hidee" fxLayout="row" fxLayoutAlign="space-evenly">
+
+
+    <div style="background-color: inherit;padding:0.5rem 1rem;" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="start stretch" >
+      <h3 class="footer-head">Get to know us!</h3>
+      <hr>
+      <a href=# class="footer-btns" >About us</a>
+      <a href=# class="footer-btns">Press</a>
+    </div>
+    
+
+    <div  style="background-color: inherit;padding:0.5rem 1rem;" fxLayout="column" fxLayoutGap="1rem" fxAlignLayout="start stretch" >
+      <h3 class="footer-head">Contact us!</h3>
+      <hr>
+      <a href=# class="footer-btns">Email</a>
+      <a href=# class="footer-btns">Twitter</a>
+      <a href=# class="footer-btns">Facebook</a>
+      <a href=# class="footer-btns">Instagram</a>
+    </div>
+    
+    
+    <div style="background-color: inherit;padding:0.5rem 1rem;" fxLayout="column" fxLayoutGap="1rem" fxAlignLayout="start stretch" >
+      <h3 class="footer-head">Our Policy!</h3>
+      <hr>
+      <a href=# class="footer-btns">Return Policy</a>
+      <a href=# class="footer-btns">Terms of use</a>
+      <a href=# class="footer-btns">Security</a>
+      <a href=# class="footer-btns">Privacy</a>
+    </div>
+    
+    
+    <div style="background-color: inherit;padding:0.5rem 1rem;"  fxLayout="column" fxLayoutGap="1rem" fxAlignLayout="start stretch" >
+      <h3 class="footer-head">Need help?</h3>
+      <hr>
+      <a href=# class="footer-btns">Account</a>
+      <a href=# class="footer-btns">Returns</a>
+      <a href=# class="footer-btns">Payments</a>
+      <a href=# class="footer-btns">FAQ</a>
+    </div>
+
+  </div>
+  
+
+  <div style="width:100%;background-color:black;height:3rem;"></div>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
