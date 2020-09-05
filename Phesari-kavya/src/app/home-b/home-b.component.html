@@ -1,0 +1,137 @@
+
+
+<div style="height:5.5rem;color:white;background-color: black;text-align: center;font-size:5.5rem">Phesari</div>
+
+<!--First line-->
+<div class="btn-div" id="hidee" style="height:6rem;" fxLayout="row" fxLayoutAlign="evenly-spaced">
+    
+    
+  <div class="firstr-firstc" fxLayout="row" >
+    <i class="flaticon-india map-i "></i>
+  </div>
+  
+
+   <div  class="firstr-midc"  fxLayout="row" >
+          <input type="text"   fxFlex="99 99 auto" name="search">
+          <button  class="btns" type="submit" fxFlex="1 1 auto"><i class="fa fa-search"></i></button>
+   </div>
+
+
+   <div  class="firstr-lastc" fxLayout="row" fxLayoutAlign="space-around" >
+
+    <button   class="btns" style="font-weight:500;font-size: 2rem;padding:0.5rem 0.75rem">Sign In / Sign Up</button>
+
+    <button  class="btns" >
+      <span class="flaticon-butterfly-shape-top-view icon" ></span>
+    </button>
+
+    <button  class="btns" >
+      <span class="flaticon-shop cart"></span> 
+    </button>
+
+    </div>
+  </div>
+  
+<mat-sidenav-container>
+  <!--1.Sidenav for menu-->
+  
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" style="background-color: black; " position="end">
+     <div fxLayout="rows" style="margin:1.25rem;margin-left:0rem;margin-bottom:1rem">
+      <i  (click)=sidenav.close() class="flaticon-arrow arr" ></i>
+       <div style="color:white;font-size:1.9rem;margin:auto">Hello, Sign in :)</div>
+    </div>
+    <div style="text-align: center;font-size:1.6rem;color:grey;">Shop By Category</div>
+
+        <div style="margin-bottom:0.8rem;" fxLayout="column" fxAlignLayout="space-evenly stretch">
+          <p class="mennu-h">Women</p>
+        <a  href="#" class="menuu-buttons">Sarees</a>
+        <a  href="#" class="menuu-buttons">Kurtis</a>
+        <a  href="#" class="menuu-buttons">Ethnic</a>
+        <a  href="#" class="menuu-buttons">Western</a>
+        <a  href="#" class="menuu-buttons">Lehengas</a>
+        <a  href="#" class="menuu-buttons">Night wear</a>
+        </div>
+    
+        <div style="margin-bottom:0.8rem;" fxLayout="column"  fxAlignLayout="space-evenly stretch">
+          <p class="mennu-h">Men</p>
+        <a  href="#" class="menuu-buttons">Shirts</a>
+        <a  href="#" class="menuu-buttons">Kurtas</a>
+        <a  href="#" class="menuu-buttons">Suits</a>
+        <a  href="#" class="menuu-buttons">Trousers</a>
+        <a  href="#" class="menuu-buttons">Jeans</a>
+        <a  href="#" class="menuu-buttons">Night wear</a>
+        </div>
+
+        <div style="margin-bottom:1.5rem;" fxLayout="column" fxAlignLayout="space-evenly stretch">
+          <p class="mennu-h">Kids</p>
+        <a  href="#" class="menuu-buttons">Ethnic wear</a>
+        <a  href="#" class="menuu-buttons">Infants</a>
+        <a  href="#" class="menuu-buttons">Hoodies</a>
+        <a  href="#" class="menuu-buttons">Skirts</a>
+        <a  href="#" class="menuu-buttons">Jeans</a>
+        <a  href="#" class="menuu-buttons">Night wear</a>
+        </div>
+    
+    <div fxLayout="column" style="margin-bottom:2.5rem;" fxAlignLayout="space-evenly stretch">
+        <a  href="#" class="mennu-bts">Customize</a>
+        <a  href="#" class="mennu-bts">Sell</a>
+        <a  href="#" class="mennu-bts">Customer Service</a>
+        <a  href="#" class="mennu-bts">About Us</a>
+        <a  href="#" class="mennu-bts">View account</a>
+        <a  href="#" class="mennu-bts">Sign in</a>
+        </div>
+
+     
+      
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+     
+ 
+  
+   
+      <!--Second line-->
+      
+      <div class="btn-div" id="hidee" style="height:3.6rem;" fxLayout="row" fxLayoutAlign="evenly-spaced">
+      
+        <button  class="btns sec-btns" > Location</button>
+        
+      <div class="midc" fxLayout="row"  fxLayoutAlign="space-between">
+        <button class="btns second-btns" id="hidee">Best sellers</button>
+        <button class="btns second-btns" id="hidee">Men</button>
+        <button class="btns second-btns" id="hidee">Women</button>
+        <button class="btns second-btns" id="hidee">Kids</button>
+        <button class="btns second-btns">Customize</button>
+        <button class="btns second-btns">Customer Service</button>
+        <button class="btns second-btns" >Sell</button>
+        </div>
+
+        <div class="firstr-lastc " fxLayout="row" fxLayoutAlign="space-evenly">
+        <div><ul><li><button  class="btns sec-btns " style="padding-left:2rem;padding-right:2rem;" >Language<i class="fa fa-caret-down" style="font-size:1.45rem;padding-left:0.25rem"></i> </button>
+         <ul> <mat-radio-group aria-label="Select an option" class="lang" fxLayout="column" fxLayoutAlign="space-evenly">
+          <li><mat-radio-button value="1" checked="true" style="margin-bottom: 1.2rem;"><div style="font-size: 1.55rem;font-weight:400">English </div></mat-radio-button></li>
+          <li><mat-radio-button value="2" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Hindi </div></mat-radio-button></li>
+          <li><mat-radio-button value="3" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Malayalam </div></mat-radio-button></li>
+          <li><mat-radio-button value="4" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Telugu </div></mat-radio-button></li>
+          <li><mat-radio-button value="5" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Kannada </div></mat-radio-button></li>
+          <li><mat-radio-button value="6" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Marathi </div></mat-radio-button></li>
+          <li><mat-radio-button value="7" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Gujarati </div></mat-radio-button></li>
+          <li><mat-radio-button value="8" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Rajasthani </div></mat-radio-button></li>
+          <li><mat-radio-button value="9" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Assamese </div></mat-radio-button></li>
+          <li><mat-radio-button value="10" style="margin-bottom: 1rem;"><div style="font-size: 1.55rem;font-weight:400">Tamil </div></mat-radio-button></li>
+      </mat-radio-group>
+          </ul>
+        </li>
+      </ul>
+        </div>
+        <button  class="btns sec-btns">About Us</button>
+        <button  class=" btns" (click)=sidenav.open()><span class="flaticon-menu icon menu" ></span></button>
+        </div>
+        
+      
+      </div>
+      <div style="height:100rem"></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  

@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 19/07/2020 11:50
+    Creation date: 05/09/2020 07:42
     */
 
     @font-face {
@@ -43,6 +43,8 @@
 .flaticon-down-arrow:before { content: "\f103"; }
 .flaticon-shop:before { content: "\f104"; }
 .flaticon-technical-support:before { content: "\f105"; }
+.flaticon-home-run:before { content: "\f106"; }
+.flaticon-arrow:before { content: "\f107"; }
     
     $font-Flaticon-india: "\f100";
     $font-Flaticon-butterfly-shape-top-view: "\f101";
@@ -50,3 +52,5 @@
     $font-Flaticon-down-arrow: "\f103";
     $font-Flaticon-shop: "\f104";
     $font-Flaticon-technical-support: "\f105";
+    $font-Flaticon-home-run: "\f106";
+    $font-Flaticon-arrow: "\f107";
