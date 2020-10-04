@@ -5,7 +5,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatSliderModule} from '@angular/material/slider';
-
+import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +19,8 @@ import { DesignerBComponent } from './designer-b/designer-b.component';
 import { DesignerAComponent } from './designer-a/designer-a.component';
 import { HomeAComponent } from './home-a/home-a.component';
 import { HomeBComponent } from './home-b/home-b.component';
+import { SellPortalComponent } from './sell-portal/sell-portal.component';
+import { StartSellingComponent } from './start-selling/start-selling.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HomeBComponent } from './home-b/home-b.component';
     DesignerBComponent,
     DesignerAComponent,
     HomeAComponent,
-    HomeBComponent
+    HomeBComponent,
+    SellPortalComponent,
+    StartSellingComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +46,10 @@ import { HomeBComponent } from './home-b/home-b.component';
     MatToolbarModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatSliderModule
+    MatSliderModule,
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent,
-  PostOrderComponent,NewOutlineComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
