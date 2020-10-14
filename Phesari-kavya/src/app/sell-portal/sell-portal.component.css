@@ -19,6 +19,8 @@
     margin:0.4rem 0rem;
   }
   .sec-hea{
+    padding:1.25rem 0;
+    margin:auto;
     width:18%;
     font-size:1.9rem;  
     border-radius: 2rem; 
@@ -34,3 +36,27 @@
   }
   
   
+  .icon:before{
+font-size: 6rem;
+  }
+  .icon{
+    margin: auto;
+  }
+
+  .card-text
+  {
+    font-size: 1.65rem;
+    color:rgba(0,0,0,.54);
+    font-size: 600;
+    margin: 1 rem;
+  }
+
+  .card{
+    box-shadow: 0.05rem 0.15rem 1.5rem 0.6rem rgba(0,0,0,0.2);
+    margin:2rem auto;
+    max-width: 24.5rem;
+    min-width:24.5rem;
+    height:28rem;
+    display: flex;
+    flex-direction: column;
+  }

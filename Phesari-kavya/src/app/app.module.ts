@@ -21,6 +21,8 @@ import { HomeAComponent } from './home-a/home-a.component';
 import { HomeBComponent } from './home-b/home-b.component';
 import { SellPortalComponent } from './sell-portal/sell-portal.component';
 import { StartSellingComponent } from './start-selling/start-selling.component';
+import { SecurityAndProtectionComponent } from './security-and-protection/security-and-protection.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { StartSellingComponent } from './start-selling/start-selling.component';
     HomeAComponent,
     HomeBComponent,
     SellPortalComponent,
-    StartSellingComponent
+    StartSellingComponent,
+    SecurityAndProtectionComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { StartSellingComponent } from './start-selling/start-selling.component';
     FlexLayoutModule,
     MatMenuModule,
     MatSliderModule,
-    MatCardModule
+    MatCardModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

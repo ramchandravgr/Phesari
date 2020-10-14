@@ -1,0 +1,73 @@
+
+
+  .btnsss{
+    background-color: black;
+    color:white;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    font-size:2rem;   
+    font-weight:500;     
+  }
+  .head{
+    width:20%;
+  }
+  .sec-head{
+    width:100%;
+    padding:2rem 1rem;
+    min-width:24rem;
+    margin:0.4rem 0rem;
+  }
+  .sec-hea{
+    padding:1.25rem 0;
+    margin:auto;
+    width:18%;
+
+    max-width:16rem;
+    min-width:16rem;
+    font-size:1.9rem;  
+    border-radius: 2rem; 
+  }
+
+  .btnsss:focus{
+    background-color:gray;
+  }
+  
+  *{
+    margin:0rem;
+    padding:0rem;
+  }
+  
+
+  .icon:before{
+    font-size: 6rem;
+      }
+      .icon{
+        margin: auto;
+      }
+    
+
+   /* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+} 
