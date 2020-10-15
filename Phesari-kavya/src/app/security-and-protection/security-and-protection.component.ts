@@ -6,16 +6,13 @@ import { Component, OnInit , AfterViewInit, ViewChildren} from '@angular/core';
   styleUrls: ['./security-and-protection.component.css']
 })
 export class SecurityAndProtectionComponent implements OnInit {
-public coll="none";
-openn(){
-  if(this.coll==="none")
-  this.coll="block";
-  else
-  this.coll="none";
-}
+coll:boolean []=[false,false,false,false,false,false];
+positive=false;
+negative=false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
