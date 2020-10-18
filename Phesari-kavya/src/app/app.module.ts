@@ -23,6 +23,8 @@ import { SellPortalComponent } from './sell-portal/sell-portal.component';
 import { StartSellingComponent } from './start-selling/start-selling.component';
 import { SecurityAndProtectionComponent } from './security-and-protection/security-and-protection.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { SellersNavComponent } from './sellers-nav/sellers-nav.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeBComponent,
     SellPortalComponent,
     StartSellingComponent,
-    SecurityAndProtectionComponent
+    SecurityAndProtectionComponent,
+    HowItWorksComponent,
+    SellersNavComponent
   ],
   imports: [
     BrowserModule,

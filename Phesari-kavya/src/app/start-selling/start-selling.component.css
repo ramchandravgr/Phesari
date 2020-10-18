@@ -1,0 +1,18 @@
+.part{
+    min-width:34rem;
+    max-width:34rem;
+    font-size:1.6rem;
+    font-weight:500;
+    padding:2rem 2rem 2rem 0rem;
+    border-style: solid;
+    border-width: 0.3rem;
+    border-color: grey;
+    border-radius: 3rem;
+}
+.icon:before{
+    font-size: 6rem;
+      }
+      .icon{
+        margin: auto;
+      }
+    
