@@ -25,6 +25,8 @@ import { SecurityAndProtectionComponent } from './security-and-protection/securi
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SellersNavComponent } from './sellers-nav/sellers-nav.component';
+import { ServiceComponent } from './service/service.component';
+import { AboutSellingComponent } from './about-selling/about-selling.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { SellersNavComponent } from './sellers-nav/sellers-nav.component';
     StartSellingComponent,
     SecurityAndProtectionComponent,
     HowItWorksComponent,
-    SellersNavComponent
+    SellersNavComponent,
+    ServiceComponent,
+    AboutSellingComponent
   ],
   imports: [
     BrowserModule,

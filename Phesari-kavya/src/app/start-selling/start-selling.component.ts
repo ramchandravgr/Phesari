@@ -6,8 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-selling.component.css']
 })
 export class StartSellingComponent implements OnInit {
+  public col:any=[false,false,false];
+
+   cl(cll:Number):void
+  {
+    for(var i=0;i<this.col.length;i++)
+    {
+      if(i!=cll)
+      {
+        this.col[i]=false;
+      }
+      else
+      this.col[i]=true;
+    }
+  }
 
   constructor() { }
+  
 
   ngOnInit(): void {
   }

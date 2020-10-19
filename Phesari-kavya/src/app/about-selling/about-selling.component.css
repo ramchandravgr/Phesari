@@ -1,0 +1,23 @@
+.sec-hea{
+    padding:1.25rem 0;
+    margin:auto;
+    width:18%;
+
+    max-width:16rem;
+    min-width:16rem;
+    font-size:1.9rem;  
+    border-radius: 2rem; 
+  }
+
+  .btnsss:focus{
+    background-color:gray;
+  }
+  .btnsss{
+    background-color: black;
+    color:white;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    font-size:2rem;   
+    font-weight:500;     
+  }

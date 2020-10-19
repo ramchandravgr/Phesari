@@ -9,9 +9,9 @@
 <div style="height:4rem;"></div>
 
 
-<div  style="width:85%;margin:auto;flex-wrap: wrap;min-width: 105rem;" fxLayout="row" fxLayoutAlign="space-between">
+<div  style="width:85%;margin:auto;flex-wrap: wrap;min-width: 105rem;padding-bottom:5rem;" fxLayout="row" fxLayoutAlign="space-between">
 
-        <div class="part" fxLayout="row" fxLayoutGap="2rem">
+        <div class="part" fxLayout="row" fxLayoutGap="2rem" (click)="cl(0)">
         <i class="flaticon-customer-1 icon" ></i>    
         <div>
          <div style="font-size:1.9rem;font-weight:600">Atleast 1 product to sell<br></div>
@@ -19,7 +19,7 @@
         </div>
         </div>
 
-        <div class="part" fxLayout="row" fxLayoutGap="2rem">
+        <div class="part" fxLayout="row" fxLayoutGap="2rem" (click)="cl(1)">
         <i class="flaticon-customer-1 icon" ></i>    
         <div>
          <div style="font-size:1.9rem;font-weight:600">Atleast 1 product to sell<br></div>
@@ -27,11 +27,93 @@
         </div>
         </div>
 
-        <div class="part" fxLayout="row" fxLayoutGap="2rem">
+        <div class="part" fxLayout="row" fxLayoutGap="2rem" (click)="cl(2)">
         <i class="flaticon-customer-1 icon" ></i>    
         <div>
          <div style="font-size:1.9rem;font-weight:600">Atleast 1 product to sell<br></div>
          All you need is a minimum of 1 unique product to start selling on Phesari.
         </div>
         </div>
+</div>
+
+<div  *ngIf="col[0]" style="width:80%;margin:auto;flex-wrap: wrap;min-width: 105rem;" fxLayout="column"  class="process">
+  <div  style="font-size:1.75rem;font-weight: 600;margin:1rem auto;margin-bottom:3rem">
+    We will guide you through the process of one.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem;" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-1</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-2</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-3</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-4</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-5</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+</div>
+
+
+
+<div  *ngIf="col[1]" style="width:80%;margin:auto;flex-wrap: wrap;min-width: 105rem;" fxLayout="column"  class="process">
+  <div  style="font-size:1.75rem;font-weight: 600;margin:1rem auto;margin-bottom:3rem">
+    We will guide you through the process of two.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem;" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-1</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-2</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-3</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-4</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-5</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+</div>
+
+
+
+<div  *ngIf="col[2]" style="width:80%;margin:auto;flex-wrap: wrap;min-width: 105rem;" fxLayout="column"  class="process">
+  <div  style="font-size:1.75rem;font-weight: 600;margin:1rem auto;margin-bottom:3rem">
+    We will guide you through the process of three.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem;" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-1</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-2</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-3</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-4</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
+  <div fxLayout="row" style="margin:1.5rem" >
+    <div style="font-size:1.75rem;font-weight: 600;margin-right:4rem"> Step-5</div>
+    When the list-items navigate somewhere, should be used with elements as the list items. The nav-list will be rendered using role="navigation" and can be given an aria-label to give context on the set of navigation options presented. Additional interactive content, such as buttons, should not be added inside the anchors.
+  </div>
 </div>

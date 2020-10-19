@@ -1,0 +1,60 @@
+.topics{
+    font-size: 1.75rem;
+    padding:1.35rem 5rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(35, 35, 35);
+}
+
+.topics:hover{
+    background-color: rgb(243, 239, 252);
+    color: rgb(113, 47, 255);
+}
+
+.topic{
+    font-size: 1.4rem;
+    padding:2rem 3rem;
+    padding-bottom: 1rem;;
+    font-weight: 500;
+}
+
+.back{
+    font-size: 1.5rem;
+    color: gray;
+    padding:2rem 2rem;
+    padding-bottom: 0rem;
+}
+
+.topic-head{
+
+    font-size: 1.9rem;
+    padding:1.4rem 5rem;
+    padding-bottom:1rem;
+    font-weight: 600;
+}
+
+.que{
+    font-size: 1.7rem;
+    padding:1.15rem 5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+.que:hover{
+    background-color: rgb(240, 233, 255);
+    color: rgb(113, 47, 255);
+}
+
+.que-ans{
+    font-size: 1.7rem;
+    padding:1.15rem 5rem;
+    font-weight: 400;
+}
+
+.iconn:before{
+        font-size: 6rem;
+          }
+.iconn{
+        font-size: 6rem;
+        }
