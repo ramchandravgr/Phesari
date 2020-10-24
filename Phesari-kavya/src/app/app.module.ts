@@ -68,14 +68,10 @@ import {RouterModule} from '@angular/router';
         {path:"about-us" , component:AboutSellingComponent,
         children:[
             {path:'',redirectTo:'why-phesari',pathMatch:'full'},
-            {path:"why-phesari" , component:SellPortalComponent,
-        children:[
-          {path:"security-and-protection" , component:SecurityAndProtectionComponent}
-        ]
-      },
-      {path:"how-it-works" , component:HowItWorksComponent}
-        ]
-      },
+            {path:"why-phesari" , component:SellPortalComponent},
+          {path:"security-and-protection" , component:SecurityAndProtectionComponent},
+          {path:"how-it-works" , component:HowItWorksComponent}
+        ]},
       {path:"service" , component:ServiceComponent},
       {path:"start-to-sell" , component:StartSellingComponent},
       ]
