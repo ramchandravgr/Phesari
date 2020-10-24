@@ -45,18 +45,17 @@ font-size: 6rem;
 
   .card-text
   {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     color:rgba(0,0,0,.54);
     font-size: 600;
-    margin: 1 rem;
+    margin: auto;
   }
 
   .card{
     box-shadow: 0.05rem 0.15rem 1.5rem 0.6rem rgba(0,0,0,0.2);
-    margin:2rem auto;
-    max-width: 24.5rem;
-    min-width:24.5rem;
-    height:28rem;
+    max-width: 28rem;
+    min-width:28rem;
     display: flex;
     flex-direction: column;
+    margin:2rem auto;
   }

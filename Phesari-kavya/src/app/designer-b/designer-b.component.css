@@ -1,19 +1,25 @@
 
 
-  .btnsss{
-    background-color:black;
-    color:white;
-    border: none;
-    cursor: pointer;
-    outline:none;
-    margin: auto;
-    font-size:2rem;        
-  }
+/*to take off the radio symbols*/
+::ng-deep .mat-radio-button .mat-radio-container {
+  width: 0;
+}
+::ng-deep .mat-radio-container .mat-radio-outer-circle,
+::ng-deep .mat-radio-container .mat-radio-inner-circle {
+  border: none;
+  width: 0;
+}
 
-  .btnsss:hover{
-    color:gray;
-  }
-  
+.hi:hover .b{
+  padding-top:0.75rem;
+  padding-bottom: 0.75rem;
+}
+.rad{
+font-size: 1.55rem;
+font-weight:400;
+margin:auto;
+padding-top:1rem;
+}
   *{
     margin:0rem;
     padding:0rem;
@@ -22,10 +28,6 @@
   .lang{
     background-color:black;
     color:white;
-    padding-top: 1rem;
-    padding-left: 0.5rem;
-    font-family: Roboto;
-    border-radius: 0rem 0rem 2rem 2rem ;
   }
   ul ul{
     display: none;
@@ -38,3 +40,33 @@
     display:block;
   }
   
+
+
+li:hover{
+  background-color: gray;
+}
+  .btnsss{
+    background-color: black;
+    color:white;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    font-size:2rem;   
+    font-weight:500;     
+  }
+  .head{
+    width:20%;
+  }
+  
+
+  .btnsss:focus{
+    background-color:gray;
+  }
+  .btnsss:hover     {
+    background-color:gray;
+  }
+  
+  *{
+    margin:0rem;
+    padding:0rem;
+  }

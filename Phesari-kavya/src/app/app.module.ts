@@ -16,8 +16,6 @@ import { PostOrderComponent } from './post-order/post-order.component';
 import { NewOutlineComponent } from './new-outline/new-outline.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { DesignerBComponent } from './designer-b/designer-b.component';
-import { DesignerAComponent } from './designer-a/designer-a.component';
-import { HomeAComponent } from './home-a/home-a.component';
 import { HomeBComponent } from './home-b/home-b.component';
 import { SellPortalComponent } from './sell-portal/sell-portal.component';
 import { StartSellingComponent } from './start-selling/start-selling.component';
@@ -27,7 +25,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SellersNavComponent } from './sellers-nav/sellers-nav.component';
 import { ServiceComponent } from './service/service.component';
 import { AboutSellingComponent } from './about-selling/about-selling.component';
-
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +34,6 @@ import { AboutSellingComponent } from './about-selling/about-selling.component';
     NewOutlineComponent,
     BottomComponent,
     DesignerBComponent,
-    DesignerAComponent,
-    HomeAComponent,
     HomeBComponent,
     SellPortalComponent,
     StartSellingComponent,
@@ -44,7 +41,7 @@ import { AboutSellingComponent } from './about-selling/about-selling.component';
     HowItWorksComponent,
     SellersNavComponent,
     ServiceComponent,
-    AboutSellingComponent
+    AboutSellingComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +56,33 @@ import { AboutSellingComponent } from './about-selling/about-selling.component';
     MatMenuModule,
     MatSliderModule,
     MatCardModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path:'',redirectTo:'home',pathMatch:'full'},
+      {path:"home" , component:HomeBComponent},
+      {path:"design" , component:DesignerBComponent},
+      {path:"sell" , component:SellersNavComponent,
+      children:[
+        {path:'',redirectTo:'about-us',pathMatch:'full'},
+        {path:"about-us" , component:AboutSellingComponent,
+        children:[
+            {path:'',redirectTo:'why-phesari',pathMatch:'full'},
+            {path:"why-phesari" , component:SellPortalComponent,
+        children:[
+          {path:"security-and-protection" , component:SecurityAndProtectionComponent}
+        ]
+      },
+      {path:"how-it-works" , component:HowItWorksComponent}
+        ]
+      },
+      {path:"service" , component:ServiceComponent},
+      {path:"start-to-sell" , component:StartSellingComponent},
+      ]
+    },
+      
+     
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

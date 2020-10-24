@@ -30,6 +30,9 @@
   .btnsss:focus{
     background-color:gray;
   }
+  .btnsss:hover     {
+    background-color:gray;
+  }
   
   *{
     margin:0rem;

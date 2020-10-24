@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./designer-b.component.css']
 })
 export class DesignerBComponent implements OnInit {
-
+  Language="English";
   constructor() { }
 
   ngOnInit(): void {

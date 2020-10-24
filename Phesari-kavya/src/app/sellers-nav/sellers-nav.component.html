@@ -1,10 +1,10 @@
 <div style="color:white;background-color: black;text-align: center;font-size:5.5rem">Phesari</div>
     <!--First Line-->
       <div  id="hidee" style="height:4.5rem;background-color: black" fxLayout="row" >
-        <button  flex class="btnsss head">About Us</button>
-        <button flex class="btnsss head">Start Selling</button>
+        <button  flex class="btnsss head" routerLink="about-us">About Us</button>
+        <button flex class="btnsss head" routerLink="start-to-sell">Start Selling</button>
         <button flex class="btnsss head">Seller's Blog</button>
-        <button flex class="btnsss head">Contact Us</button> 
+        <button flex class="btnsss head" routerLink="service">Contact Us</button> 
         <button flex class="btnsss head">Login</button>
       </div>
-      
+      <router-outlet></router-outlet>
