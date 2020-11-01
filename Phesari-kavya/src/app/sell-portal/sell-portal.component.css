@@ -9,6 +9,7 @@
     font-size:2rem;   
     font-weight:500;     
   }
+
   .head{
     width:20%;
   }
@@ -49,13 +50,14 @@ font-size: 6rem;
     color:rgba(0,0,0,.54);
     font-size: 600;
     margin: auto;
+    text-align: center;
   }
 
   .card{
     box-shadow: 0.05rem 0.15rem 1.5rem 0.6rem rgba(0,0,0,0.2);
-    max-width: 28rem;
-    min-width:28rem;
+    max-width: 30rem;
+    min-width:30rem;
     display: flex;
     flex-direction: column;
-    margin:2rem auto;
+    margin:2.5rem auto;
   }

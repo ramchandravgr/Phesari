@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-selling.component.css']
 })
 export class StartSellingComponent implements OnInit {
-  public col:any=[false,false,false];
+  public col:any=[false,false,false,false,false,false];
 
    cl(cll:Number):void
   {
@@ -17,7 +17,7 @@ export class StartSellingComponent implements OnInit {
         this.col[i]=false;
       }
       else
-      this.col[i]=true;
+      this.col[i]=!this.col[i];
     }
   }
 
