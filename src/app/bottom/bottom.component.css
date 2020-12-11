@@ -1,0 +1,32 @@
+/*Footer division*/
+
+
+.footer-head{
+    font-size:2rem;
+    color:white;
+    font-weight: 500;
+    border-bottom: solid;
+    border-color: white;
+    border-width:0.2rem;
+    padding:0.5rem;
+  }
+  
+  
+  .footer-btns{
+    background-color:inherit;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin:0 auto;
+    font-size:1.7rem;
+    font-weight:400;
+    }
+    
+    .footer-btns:hover{
+    text-decoration: underline;
+    }
+
+    
+    .ic:before{
+      font-size:2.5rem;
+    }

@@ -1,0 +1,245 @@
+
+<div style="height:1rem"></div>
+
+<div fxLayout="row" style="width:90%;margin:auto;padding-bottom:4rem;" fxLayoutAlign="start start">
+<div style="height:60rem;min-width:30rem;margin-right:2rem;background-color: rgb(236, 246, 255);overflow-y:auto">
+    <div class="topic" >HELP TOPICS</div>
+    <div class="topics" (click)="h[ht]=false;h[0]=true;ht=0;o[b]=false">FAQS</div>
+    <div class="topics" (click)="h[ht]=false;h[1]=true;ht=1;o[b]=false">Orders</div>
+    <div class="topics" (click)="h[ht]=false;h[2]=true;ht=2;o[b]=false">Orders</div>
+    <div class="topics" (click)="h[ht]=false;h[3]=true;ht=3;o[b]=false">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+    <div class="topics">Orders</div>
+</div>
+<div *ngIf="h[0]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem">
+    <div class="topic-head">Frequently Asked Questions (FAQS)</div>
+    <div class="que" (click)="o[0]=!o[0];h[0]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[1]=!o[1];h[0]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[2]=!o[2];h[0]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[3]=!o[3];h[0]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[4]=!o[4];h[0]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    </div>
+
+
+<div *ngIf="h[1]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem">
+    <div class="back"> Customer Service < Orders </div>
+    <div class="topic-head">Orders</div> 
+    <div class="que" (click)="o[0]=!o[0];h[1]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[1]=!o[1];h[1]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que" (click)="o[2]=!o[2];h[1]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+    </div>
+    
+    <div *ngIf="h[2]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem">
+        <div class="back"> Customer Service < Orders </div>
+        <div class="topic-head">Orders</div> 
+        <div class="que" (click)="o[0]=!o[0];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[1]=!o[1];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[2]=!o[2];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[3]=!o[3];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[4]=!o[4];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[5]=!o[5];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        <div class="que" (click)="o[6]=!o[6];h[2]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+        </div>
+        <div *ngIf="h[3]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem">
+            <div class="back"> Customer Service < Orders </div>
+            <div class="topic-head">Orders</div> 
+            <div class="que" (click)="o[0]=!o[0];h[3]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+            <div class="que" (click)="o[1]=!o[1];h[3]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+            <div class="que" (click)="o[2]=!o[2];h[3]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+            <div class="que" (click)="o[3]=!o[3];h[3]=false">What should I do if my order is approved but hasn't been shipped yet?</div>
+           </div>
+
+
+<div *ngIf="o[0]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[0]=!o[0];b=0;h[ht]=true" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+<div *ngIf="o[1]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[1]=!o[1];h[ht]=true;b=1" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+<div *ngIf="o[2]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[2]=!o[2];h[ht]=true;b=2" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+<div *ngIf="o[3]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[3]=!o[3];h[ht]=true;b=3" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+
+<div *ngIf="o[4]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[4]=!o[4];h[ht]=true;b=4" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+
+<div *ngIf="o[5]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[5]=!o[5];h[ht]=true;b=5" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+
+<div *ngIf="o[6]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[6]=!o[6];h[ht]=true;b=6" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
+
+
+
+<div *ngIf="o[7]" style="background-color: rgb(236, 246, 255);width:100%;min-width:100rem" fxLayout="column" >
+    <div class="back"> Customer Service < Orders < <span (click)="o[7]=!o[7];h[ht]=true;b=7" style="cursor: pointer;"> What should I do if my order is approved but hasn't been shipped yet? </span></div>
+    <div class="topic-head" >What should I do if my order is approved but hasn't been shipped yet?</div>
+    <div class="que-ans">
+
+        SuperCoins calculation happens at the order level. You will get to know about the SuperCoins deducted after you've cancelled or returned an item as it will be recalculated on the basis of the updated order value.
+        
+        To know more about the program click here. For more information on SuperCoins click here
+    </div> 
+    <div style="margin:0 auto;font-size: 2.1rem;font-weight: 500;" *ngIf="!(positive || negative)">Is this Article helpful?</div> 
+    <div style="font-size: 2.1rem;font-weight: 500;margin:auto;display: flex;flex-direction: row;" *ngIf="!(positive || negative)">
+       
+       <div><i class="flaticon-thumbs-up  iconn" (click)="positive=!positive"></i></div>
+       <div><i class="flaticon-thumb-down iconn " (click)="negative=!negative"></i></div>
+       </div>
+       <div style="font-size: 2.1rem;font-weight: 500;margin:auto;" >
+       <div *ngIf="positive" style="margin:3.5rem auto;">Thank you for your feedback</div>
+       <div *ngIf="negative" style="margin:3.5rem auto;">We appreciate for your feedback. Please tell us how we can improve your experience.</div>
+      </div>
+</div>
