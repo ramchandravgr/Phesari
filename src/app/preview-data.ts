@@ -1,15 +1,14 @@
 export class DesignerPreviewData {
     dressType : string;
-    budget : number;
+    cost : number;
     colour : string;
     material : string;
     imageUrl : any;
-    age : number;
     description : string;
-    // duration : number;
+    duration : number;
     constructor(x,y,z,a,b,c,d){
-        this.age = x;
-        this.budget = y;
+        this.duration=x;
+        this.cost = y;
         this.colour = z;
         this.dressType = a;
         this.material = b;

@@ -24,13 +24,13 @@
                     <p> Description : {{item.description}}</p>
                   </div>
                   <div class="CartBtn">
-                    <button type="btn " class="btn btn-success"  (click) = "Cart(item.PID)" > <i class="fa fa-shopping-cart"> Add to Cart</i></button>
+                    <button type="btn " class="btn btn-success"  (click) = "WishList(item.PID)" > <i class="fa fa-thumbs-up"> Add to WishList</i></button>
                   </div>
                   <a class="right" href={{item.imgURL}}>
                     <img class="image" [src]="item.imgURL" alt="Card image cap">
                   </a>
                   <div class="removeitem">
-                    <button type="btn " class="btn btn-success" (click) ="Remove(item.PID)" ><i class="fa fa-trash"></i> Remove Item</button>
+                    <button type="btn " class="btn btn-success" (click) ="Remove(item.PID)" ><i class="fa fa-trash"></i> Remove From Cart</button>
                   </div>
                   <div class="moredetails">
                       <button type="btn " class="btn btn-success"  > <i class="fa fa-arrow-right"></i>More Details</button>
@@ -59,9 +59,9 @@
                             </div> 
                              <div class="buttons">
                                <button type="btn " class="btn btn-success" (click) ="Remove(item.PID)" ><i class="fa fa-trash"></i></button>
-                               <button type="btn " class="btn btn-success"  (click) = "Cart(item.PID)" > <i class="fa fa-shopping-cart"></i></button>
+                               <button type="btn " class="btn btn-success"  (click) = "WishList(item.PID)" > <i class="fa fa-thumbs-up"></i></button>
                                <div class="moredetails">
-                                 <button type="btn " class="btn btn-success"  > <i class="fa fa-arrow-right"></i>More Details</button>
+                                 <button type="btn " class="btn btn-success"> <i class="fa fa-arrow-right"></i>More Details</button>
                                </div>
                              </div>
                            </div>

@@ -5,6 +5,7 @@ import { map, tap, scan, mergeMap, throttleTime } from 'rxjs/operators';
 import { DesignerPreviewData } from '../preview-data';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { FilterData } from '../filter-data';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -92,7 +93,8 @@ export class DesignsDisplayComponent implements OnInit {
       console.log(this.filterdata);
     const batchMap = this.offset.pipe(
       throttleTime(500),
-      mergeMap(n => this.getBatch(n)),
+      mergeMap(n => this.getBatch(n))
+      ,
       scan((acc, batch) => {
         return { ...acc, ...batch };
       }, {})
@@ -112,9 +114,9 @@ export class DesignsDisplayComponent implements OnInit {
         let query : firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
         query = query.limit(this.batch).orderBy("cost","asc").startAfter(this.offset.value)
         // .where('colour', 'in', this.filterdata.Colour)
-        // if (this.filterdata.DressType !='') { query = query.where('dresstype', '==' , this.filterdata.DressType) };
+        if (this.filterdata.DressType !='') { query = query.where('dresstype', '==' , this.filterdata.DressType) };
         // if (this.filterdata.Colour != []) { query = query.where('colour', 'in', this.filterdata.Colour) };
-        // if (this.filterdata.Material !='') { query = query.where('material', '==', this.filterdata.Colour) };
+        if (this.filterdata.Material !='') { query = query.where('material', '==', this.filterdata.Material) };
         // if (this.filterdata.BudgetMin != 0) { query = query.where('budget', '>=', this.filterdata.BudgetMin) };
         // if (this.filterdata.BudgetMax != 99999999) { query = query.where('budget', '<=', this.filterdata.BudgetMax) };
         return query;
@@ -133,23 +135,31 @@ export class DesignsDisplayComponent implements OnInit {
             return { ...acc, [id]: data };
           }, {});
         })
+      //   return arr.map(a => {
+      //     const data = a.payload.doc.data() as DesignerPreviewData;
+      //     const id = a.payload.doc.id;
+      //     console.log(id)
+      //     console.log(data)
+      //     return { id, ...data };
+      // })
+    // })
       );
-      console.log("i reached")
   }
   onScroll(e,offset) {
     console.log("on scroll activated")
     console.log(e);
       this.offset.next(offset);
   }
-  WishList(docID){
-    let Record = {};
-    Record['PID'] = docID;
-     this.db.collection('WishLists').add(Record);//when database is organised we can go for new doc id of WishLists set to Customer id and append the PIDs
+  WishList(PID){
+    //  let PID = i.PID;
+     this.db.collection('CustomerProfile').doc('customerID1').update({
+         Wishlist : firebase.firestore.FieldValue.arrayUnion(PID)
+     });
   }
-  Cart(docID){
-    let Record = {};
-    Record['PID'] = docID;
-    this.db.collection('Carts').add(Record);//above comment corrsponds
+  Cart(PID){ 
+     this.db.collection('CustomerProfile').doc('customerID1').update({
+         Cart : firebase.firestore.FieldValue.arrayUnion(PID)
+     });
   }
   onTypeSelectAll(items: any) {
     // for(let i=0 ; i < items.length ;i++){
@@ -177,11 +187,13 @@ export class DesignsDisplayComponent implements OnInit {
     console.log(event);
   }
   SetColourFilter(event){
+    console.log(event);
     this.filterdata.Colour.push(event.name);
     console.log('in colour filter')
     console.log(this.filterdata.Colour);
   }
   SetMaterialFilter(event){
+    console.log(event);
     this.filterdata.Material=event.name;
     console.log(this.filterdata.Material);
     console.log(event);

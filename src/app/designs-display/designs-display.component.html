@@ -1,4 +1,8 @@
-<ng-multiselect-dropdown
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="filters"> 
+<div class="dressfilter">
+  <ng-multiselect-dropdown
   [placeholder]="'Select Dress Type'"
   [settings]="dropdownSettings"
   [data]="dresstypes"
@@ -7,7 +11,9 @@
   (onSelectAll)="onTypeSelectAll($event)"
 >
 </ng-multiselect-dropdown>
-<ng-multiselect-dropdown
+</div>
+<div class="colourfilter">
+  <ng-multiselect-dropdown
   [placeholder]="'Select Dress Colour'"
   [settings]="dropdownSettings"
   [data]="colours"
@@ -16,7 +22,9 @@
   (onSelectAll)="onColourSelectAll($event)"
 >
 </ng-multiselect-dropdown>
-<ng-multiselect-dropdown
+</div>
+<div class="materialfilter">
+  <ng-multiselect-dropdown
   [placeholder]="'Select Material Type'"
   [settings]="dropdownSettings"
   [data]="materials"
@@ -25,8 +33,11 @@
   (onSelectAll)="onMatSelectAll($event)"
 >
 </ng-multiselect-dropdown>
-<button type="button " class="btn btn-success" (click)="SetFilter($event)">Filter Designs</button>
- <mat-grid-list cols="5" rowHeight="250px">
+</div>
+<button type="button " class="btn btn-success" (click)="SetFilter($event)"><i class="fa fa-refresh"></i>Filter Designs</button>
+</div>
+<div class="grid">
+ <mat-grid-list cols="4" rowHeight="250px">
     <div *ngIf="designs | async as items">
         <div  class="item-list"
         infinite-scroll
@@ -43,18 +54,24 @@
                   </div>
                 </div>
                 <div class="card card-back">
-                  <li> DressType   : {{item.dresstype}}</li>
-                  <li> Colour      : {{item.colour}}</li>
-                  <li> Cost        : {{item.cost}}</li>
-                  <li> Material    : {{item.material}}</li>
-                  <li> Duration    : {{item.duration}}</li>
-                  <div class="card-body bg-warning">
-                    <button type="button " class="btn btn-success" >More Details</button>
-                    <button type="button " class="btn btn-success" (click) ="WishList(item.id)" >Add to WishList</button>
-                    <button type="button " class="btn btn-success" (click) = "Cart(item.id)" >Add to Cart</button>
+                 <div class="details">
+                  <p> DressType   : {{item.dresstype}}</p>
+                  <p> Colour      : {{item.colour}}</p>
+                  <p> Cost        : {{item.cost}}</p>
+                  <p> Material    : {{item.material}}</p>
+                  <p> Duration    : {{item.duration}}</p>
+                 </div> 
+                  <div class="buttons">
+                    <button type="btn " class="btn btn-success" (click) ="WishList(item.PID)" ><i class="fa fa-thumbs-up"></i></button>
+                    <button type="btn " class="btn btn-success"  (click) = "Cart(item.PID)" > <i class="fa fa-shopping-cart"></i></button>
+                    <div class="moredetails">
+                      <button type="btn " class="btn btn-success"  > <i class="fa fa-arrow-right"></i>More Details</button>
+                    </div>
                   </div>
                 </div>
             </div>
         </mat-grid-tile>
     </div>
  </mat-grid-list>
+</div>
+</body>

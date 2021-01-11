@@ -30,5 +30,9 @@ export class FirestoreCRUDService {
   {
     return this.fireservices.doc(collectionID + '/' + recordID).delete();
   }
+  get_colreference(collectionID : string)
+  {
+    return this.fireservices.collection(collectionID);
+  }
 
 }

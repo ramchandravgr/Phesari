@@ -28,6 +28,11 @@ import { WishListPageComponent } from './wish-list-page/wish-list-page.component
 import { NgSelectModule } from '@ng-select/ng-select';
 // import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { InteractionPageComponent } from './interaction-page/interaction-page.component';
+import {ChatService} from 'src/app/chat-service.service'
+import { AuthService } from './auth-service.service';
+
 // import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 // import { DesignerPreviewData } from 'src/app/preview-data';
 // import { FilterData } from 'src/app/filter-data';
@@ -45,7 +50,9 @@ const material = [
     DesignsPreviewerComponent,
     DesignerUploadComponent,
     DesignsDisplayComponent,
-    WishListPageComponent
+    WishListPageComponent,
+    CartPageComponent,
+    InteractionPageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ const material = [
     // DesignerPreviewData,
     // FilterData,
   ],
-  providers: [DetailsUploaderService,FirestoreCRUDService],
+  providers: [DetailsUploaderService,FirestoreCRUDService,AuthService,ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

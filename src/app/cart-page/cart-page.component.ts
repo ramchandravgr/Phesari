@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map, tap, scan, mergeMap, throttleTime, concatMap, switchMap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 import { FirestoreCRUDService } from '../firestore-crud.service';
 
 @Component({
-  selector: 'app-wish-list-page',
-  templateUrl: './wish-list-page.component.html',
-  styleUrls: ['./wish-list-page.component.css']
+  selector: 'app-cart-page',
+  templateUrl: './cart-page.component.html',
+  styleUrls: ['./cart-page.component.css']
 })
-export class WishListPageComponent implements OnInit {
+export class CartPageComponent implements OnInit {
+
   ids : any;
-  Wishlist: Array<string> = [];
+  Cartlist: Array<string> = [];
   ngOnInit(): void {
      this.dbService.get_specificDoc('CustomerProfile','customerID1').subscribe((ss) => {
-       let fpath : firebase.firestore.FieldPath = new firebase.firestore.FieldPath('Wishlist');
-      this.Wishlist = ss.get(fpath);
+       let fpath : firebase.firestore.FieldPath = new firebase.firestore.FieldPath('Cart');
+      this.Cartlist = ss.get(fpath);
       this.getWishlist();
     });;
   }
@@ -30,16 +30,16 @@ export class WishListPageComponent implements OnInit {
   offsetvalue : any;
   listview : boolean = true;
   i : number = 0;
-  constructor(private dbService : FirestoreCRUDService,private db : AngularFirestore) {
+  constructor(private dbService : FirestoreCRUDService ,private db : AngularFirestore) {
     this.getWishlist();
   }
 
   getWishlist(){
-    for(let j=0;j<this.Wishlist.length;j++){
+    for(let j=0;j<this.Cartlist.length;j++){
       this.db.collection('Dresses',ref => {
       let query : firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
-      console.log(this.Wishlist[j])
-      query = query.limit(1).where('PID', '==', this.Wishlist[j])
+      console.log(this.Cartlist[j]) 
+      query = query.limit(1).where('PID', '==', this.Cartlist[j])
       return query;
       })
     .snapshotChanges().subscribe(data => {
@@ -57,12 +57,13 @@ export class WishListPageComponent implements OnInit {
   Remove(PID){
     //  let PID = i.PID;
      this.db.collection('CustomerProfile').doc('customerID1').update({
-         Wishlist : firebase.firestore.FieldValue.arrayRemove(PID)
+         Cart : firebase.firestore.FieldValue.arrayRemove(PID)
      });
   }
-  Cart(PID){ 
+  WishList(PID){
+    //  let PID = i.PID;
      this.db.collection('CustomerProfile').doc('customerID1').update({
-         Cart : firebase.firestore.FieldValue.arrayUnion(PID)
+         Wishlist : firebase.firestore.FieldValue.arrayUnion(PID)
      });
   }
   Listview(){

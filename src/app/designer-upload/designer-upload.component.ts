@@ -183,5 +183,12 @@ export class DesignerUploadComponent implements OnInit {
         console.log(this.Cost + this.Colour + this.Material + this.Description + this.dressType);
         this.detailsUploader.AddDetails(Record,"Dresses",name);
           // console.log(this.downloadURL);
+          this.Description = ''
+          this.Cost  = 0
+          this.Colour = ''
+          this.dressType  = ''
+          this.Duration  = 0
+          this.Material  = ''
+          
   }
 }

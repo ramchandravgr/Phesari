@@ -1,40 +1,73 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div *ngIf="designs | async as items">
-  <div class="item-list"
+  <div 
         infinite-scroll
         [infiniteScrollDistance]="scrollDistance"
         [infiniteScrollThrottle]="throttle"
         (scrolled)="onScroll($event,(items[items.length - 1].cost))">
   </div>
-  <div class="myUploads" *ngFor='let item of items'>
-                <div class="upload">
+
+  <div class="upload" *ngFor='let item of items'>
                   <div *ngIf="!item.edit else upload">
                     <div class="left">
-                      <li> DressType   : {{item.dresstype}}</li>
-                      <li> Material    : {{item.material}}</li>
-                      <li> Duration    : {{item.duration}}</li>
+                      <p> DressType   : {{item.dresstype}}<p>
+                      <p>Material    : {{item.material}}</p>
+                      <p>Duration    : {{item.duration}}</p>
                     </div>
                     <div class="center">
-                      <li> Colour      : {{item.colour}}</li>
-                      <li> Cost        : {{item.cost}}</li>
-                      <li> Description : {{item.description}}</li>
+                      <p> Colour      : {{item.colour}}</p>
+                      <p> Cost        : {{item.cost}}</p>
+                      <p> Description : {{item.description}}</p>
                     </div>
-                    <div class="right">
-                      <img class="card-img-top" [src]="item.imgURL" alt="Card image cap" style="width:10%">
+                    <a class="right" href={{item.imgURL}}>
+                      <img class="image" [src]="item.imgURL" alt="Card image cap">
+                    </a>
+                    <!-- <div class="right">
+                      <div class="w3-content w3-display-container">
+                      <img class="mySlides" [src]="item.imgURL" >
+                      <img class="mySlides" [src]="item.imgURL" >
+                      <img class="mySlides" [src]="item.imgURL" >
+                      <img class="mySlides" [src]="item.imgURL" >
+                      <img class="mySlides" [src]="item.imgURL" >
+                    
+                      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                     </div>
+                    </div> -->
+                    <!-- <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+                    
+                    function plusDivs(n) {
+                      showDivs(slideIndex += n);
+                    }
+                    
+                    function showDivs(n) {
+                      var i;
+                      var x = document.getElementsByClassName("mySlides");
+                      if (n > x.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = x.length}
+                      for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                      }
+                      x[slideIndex-1].style.display = "block";  
+                    }
+                    </script> -->
                     <div class="rightmost">
-                      <div class="update btn">
-                        <button type="button" class="btn btn-success" (click) ="OnUpdate(item)">Update</button>
+                      <div class="updatebtn">
+                        <button type="button" class="btn" (click) ="OnUpdate(item)">Update</button>
                       </div>
-                      <div class="delete btn">
-                        <button type="button" class="btn btn-success" (click) ="OnDelete(item.id)">Delete</button>
+                      <div class="deletebtn">
+                        <button type="button" class="btn" (click) ="OnDelete(item.id)"><i class="fa fa-trash"></i>Delete</button>
                       </div>
                     </div>
                   </div> 
-                  <ng-template #upload>
+                  <ng-template class="upload" #upload>
                     <div class="left">
                       <div class="form-group">
                         <label for="type">Dress Category</label>
-                    <input type="text" class="form-control" placeholder="Enter DressType" id="type" name="type" required [(ngModel)] = "item.editdressType">
+                    <input type="text" class="form-control" placeholder="Enter DressType" id="type" name="type" required [(ngModel)] = "item.editdresstype">
                     </div>
                     <div class="form-group">
                         <label for="Material">Dress Material</label>
@@ -59,15 +92,14 @@
                       <img class="card-img-top" [src]="item.imgURL" alt="Card image cap">
                     </div>
                     <div class="rightmost">
-                      <div class="upload btn">
-                        <button type="button" class="btn btn-success" (click) ="OnUpload(item)">Upload</button>
+                      <div class="uploadbtn">
+                        <button type="button" class="btn" (click) ="OnUpload(item)"><i class="fa fa-upload"></i>Upload</button>
                       </div>
-                      <div class="cancel btn">
-                        <button type="button" class="btn btn-success" (click) ="OnCancel(item)">Cancel</button>
+                      <div class="cancelbtn">
+                        <button type="button" class="btn" (click) ="OnCancel(item)"><i class="fa fa-close"></i>Cancel</button>
                       </div>
                     </div>
                   </ng-template>
-                </div>  
              </div>    
 </div>
 
