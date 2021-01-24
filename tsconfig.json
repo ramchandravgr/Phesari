@@ -21,6 +21,10 @@
       "path": "./e2e/tsconfig.json"
     }
     
+],
+"types": [
+  "jasmine",
+  "firebase"
 ]
 }
 

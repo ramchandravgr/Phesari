@@ -27,6 +27,19 @@ import { ServiceComponent } from './service/service.component';
 import { AboutSellingComponent } from './about-selling/about-selling.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { environment } from 'src/environments/environment';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { PhoneLoginComponent } from './phone-login/phone-login.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
